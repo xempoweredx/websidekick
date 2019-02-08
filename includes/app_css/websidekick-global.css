@@ -1,0 +1,891 @@
+/* Any CSS code applying to both admin-facing AND front-facing views should reside here. */
+
+/****************************************************
+
+    ADDITIONAL GLOBAL STYLES
+
+****************************************************/
+
+    /* html, html.wp-toolbar { padding-top: 0 !important; } */
+
+    body {
+        font-family: ProductSans, 'Montserrat',-apple-system,"Helvetica Neue",Arial,sans-serif;
+        font-weight: 400;
+        /* background: #eceff4; */
+        color: #495057;
+    }
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        font-family: ProductSans,"Roboto",-apple-system,"Helvetica Neue",Arial,sans-serif;
+        font-weight: 300;
+    }
+
+    ::placeholder {
+        color: #bbb !important;
+    }
+
+	/*.postbox {
+	    border-radius: .675rem;
+	}*/
+
+	.block-editor .edit-post-layout__metaboxes .postbox {
+	    border-radius: 0;
+	}
+
+	.block-editor .edit-post-layout__metaboxes:not(:empty) .edit-post-meta-boxes-area {
+	    margin: auto 0;
+	}
+
+	.block-editor .edit-post-layout__metaboxes:not(:empty) .edit-post-meta-boxes-area .inside {
+	    padding: 0 15px 15px 15px;
+	}
+
+	.sidekickMetabox {
+	    box-sizing: border-box;
+	}
+
+	/****************************************************
+
+		ADD TO MAIN SIDEKICK BOOTSTRAP SCSS
+
+	****************************************************/
+
+		.sidekickMetabox .form-control {
+		    height: auto;
+		    padding: 0.5rem 1rem;
+		    border-radius: 0.5rem;
+		}
+
+		.sidekickMetabox select.custom-select {
+		    height: auto;
+		    padding: .5rem 1.75rem .5rem 1rem;
+		    border-radius: 0.5rem;
+		}
+
+		.sidekickMetabox .btn {
+			border-radius: 2rem;
+		    padding: .3rem 1rem;
+		    transition: all .2s ease-in-out;
+		}
+
+    /********* OVERRIDE WP DEFAULT FONT STYLES *********/
+
+	    /* #adminmenu .wp-submenu-head, #adminmenu a.menu-top,
+	    td.column-title strong, td.plugin-title strong,
+	    .widefat td, .widefat td ol, .widefat td p, .widefat td ul,
+	    .form-table, .form-table td, .form-table td p, .form-table th {
+	    	font-size: 1rem;
+	    }
+
+	    #adminmenu .wp-submenu a,
+	    .row-actions,
+	    .subsubsub,
+	    .postbox .inside, .stuffbox .inside {
+	    	font-size: .875rem !important;
+	    }
+
+	    b, strong,
+	    #adminmenu .wp-submenu li.current, #adminmenu .wp-submenu li.current a, #adminmenu .wp-submenu li.current a:hover, 
+	    #dashboard_right_now .versions .b, #ed_reply_toolbar #ed_reply_strong, 
+	    #pass-strength-result.short, #pass-strength-result.strong, 
+	    #post-status-display, #post-visibility-display, 
+	    .feature-filter .feature-name, 
+	    .item-controls .item-order a, .media-item .percent, 
+	    .nav-tab, .plugins .name {
+	    	font-weight: 500;
+	    }
+
+	    .row-title {
+		    font-size: 1rem !important;
+		    font-weight: 500;
+		}
+
+		.search-box input[name="s"], 
+		.tablenav .search-plugins input[name="s"], 
+		.tagsdiv .newtag {
+	        float: left;
+		    height: inherit;
+		    margin: 0 8px 0 0;
+		    max-width: 180px;
+		}
+
+		.tablenav .actions select {
+		    float: none;
+		    margin-right: inherit;
+		    max-width: 200px;
+		    width: auto;
+		    height: calc(2.25rem + 2px);
+		    padding: .375rem 1.75rem .375rem .75rem;
+		    line-height: 1.5;
+		    vertical-align: middle;
+		}
+
+		.sidekick-post-list thead tr td, .sidekick-post-list thead tr th {
+		    border-top: none;
+		}
+
+		.sidekick-post-list button.toggle-row {
+		    position: absolute;
+		    right: 8px;
+		    top: 10px;
+		    display: none;
+		    padding: 0;
+		    width: 40px;
+		    height: 40px;
+		    border: none;
+		    outline: 0;
+		    background: 0 0;
+		}
+
+		input#publish {
+		    background-color: #28a745;
+		    border-color: #28a745;
+		}
+
+		input#publish:hover {
+		    background-color: #218838;
+		    border-color: #218838;
+		} */
+
+    /* #wpadminbar { display: none !important; } */
+
+    /* html.wp-toolbar { padding-top: 0; } */
+
+    .tooltip-inner {
+        padding: 3px 10px 5px 10px;
+        color: #607D8B;
+        background-color: #fff;
+        border-radius: 10rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    /**** HOVERABLE DROPDOWN & HOVER SPECIALS ****/
+
+        .dropdown-hoverable { padding: 0; }
+        .dropdown-hoverable a.dropdown-item:first-child {
+            padding-top: 12px;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+        .dropdown-hoverable a.dropdown-item:last-child {
+            padding-bottom: 12px;
+            border-bottom-left-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+        }
+
+        /* Add color selector for hover bg to show. ie. (<a class="bg-hover bg-hover-primary"> */
+        .bg-hover { background: transparent; transition: all 0.1s linear; }
+        .bg-hover:hover {  
+            color: #fff !important;
+            transition: all 0.1s linear;
+        }
+        .bg-hover-primary:hover {
+            color: #fff !important;
+            background-color: #007bff !important;
+        }
+
+        .bs4_link-secondary {
+            color: #6c757d;
+            transition: all 0.1s linear;
+        }
+        .bs4_link-secondary:hover {
+            color: #007bff;
+            transition: all 0.1s linear;
+        }
+        .bs4_link-dark {
+            color: #495057;
+            transition: all 0.1s linear;
+        }
+        .bs4_link-dark:hover {
+            color: #007bff;
+            transition: all 0.1s linear;
+        }
+
+        .bs4_btn-outline-primary {
+            color: #007bff;
+            background-color: transparent;
+            background-image: none;
+            border-color: #ccc;
+        }
+        .bs4_btn-outline-primary:hover {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .bs4_btn-outline-primary:focus, .bs4_btn-outline-primary.focus {
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        }
+        .bs4_btn-outline-primary.disabled, .bs4_btn-outline-primary:disabled {
+            color: #007bff;
+            background-color: transparent;
+        }
+        .bs4_btn-outline-primary:active, .bs4_btn-outline-primary.active,
+        .show > .bs4_btn-outline-primary.dropdown-toggle {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        /* HOVER ELEMENT SWAP   ie  (<a class="hover-element-swap"><span class="hover-element-1"><i></i></span><span class="hover-element-2"><i></i></span></a>) */
+        .hover-element-swap .hover-element-1 {
+          display: inline-block;
+          opacity: 1;
+          transition: opacity 0.3s linear;
+        }
+        .hover-element-swap .hover-element-2 {
+          display: none;
+          opacity: 0;
+          transition: opacity 0.3s linear;
+        }
+        .hover-element-swap:hover .hover-element-2 {
+          display: inline-block;
+          opacity: 1;
+          transition: opacity 0.3s linear;
+        }
+        .hover-element-swap:hover .hover-element-1 {
+          display: none;
+          opacity: 0;
+          transition: opacity 0.3s linear;
+        }
+
+    /****************************************
+      SCROLL ELEMENT FIXED
+      Combined with js
+    ******************************************/
+
+    	.scroller_anchor{height:0px; margin:0; padding:0;}
+
+
+/****************************************************
+
+    CMB2 STYLES
+
+****************************************************/
+
+	.cmb-type-sidekick-text p.form-text,
+	.cmb-type-sidekick-url p.form-text,
+	.cmb-type-sidekick-file p.form-text,
+	.cmb-type-sidekick-textarea p.form-text,
+	.cmb-type-sidekick-text-date p.form-text,
+	.cmb-type-sidekick-text-date-timestamp p.form-text,
+	.cmb-type-sidekick-text-time p.form-text,
+	.cmb-type-sidekick-text-datetime-timestamp p.form-text,
+	.cmb-type-sidekick-text-datetime-timestamp-timezone p.form-text,
+	.cmb-type-sidekick-select-timezone p.form-text {
+	    display: none;
+	}
+
+	.cmb-type-sidekick-file .cmb2-upload-file {
+	    padding-right: 100px;
+	}
+
+	.cmb-type-sidekick-file .cmb2-upload-button {
+	    position: absolute;
+	    top: 26px;
+	    right: 4px;
+	    border-radius: 0 .7rem .7rem 0;
+	    padding: 0.5rem 1rem;
+	}
+
+	.sidekickOptionsPage .cmb-type-sidekick-file .cmb2-upload-button {
+	    top: 29px;
+	    right: 14px;
+	}
+
+	.sidekickMetabox .file-status.cmb2-media-item {
+	    overflow: hidden;
+	}
+
+      /********************* 
+        Sidekick Checkbox Icon  (Updated: 18-10-03)
+      *********************/
+        .cmb-type-sidekick-checkbox-icon .custom-control-label::before {
+          display: none !important;
+        }
+        .cmb-type-sidekick-checkbox-icon .custom-control-label::after {
+          display: none !important;
+        }
+        .cmb-type-sidekick-checkbox-icon .custom-control-label span {
+          position: absolute;
+          top: 0;
+          left: -24px;
+        }
+        .cmb-type-sidekick-checkbox-icon .custom-control-label span.check-on {
+          opacity: 0;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+        .cmb-type-sidekick-checkbox-icon .custom-control-label span.check-off {
+          opacity: 1;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+        .cmb-type-sidekick-checkbox-icon .custom-control-input:checked~.custom-control-label span.check-on {
+          opacity: 1;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+        .cmb-type-sidekick-checkbox-icon .custom-control-input:checked~.custom-control-label span.check-off {
+          opacity: 0;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+
+    /********************* 
+        Sidekick Radio Icons  (Updated: 18-10-03)
+    *********************/
+        .cmb-type-sidekick-radio-icons .cmb2-list label.custom-control-label::before {
+          display: none !important;
+        }
+        .cmb-type-sidekick-radio-icons .cmb2-list label.custom-control-label::after {
+          display: none !important;
+        }
+        .cmb-type-sidekick-radio-icons .cmb2-list label.custom-control-label span {
+          position: absolute;
+          top: 0;
+          left: -27px;
+        }
+        .cmb-type-sidekick-radio-icons .cmb2-list label.custom-control-label span.radio-selected {
+          opacity: 0;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+        .cmb-type-sidekick-radio-icons .cmb2-list label.custom-control-label span.radio-option {
+          opacity: 1;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+        .cmb-type-sidekick-radio-icons .cmb2-list input.custom-control-input:checked+label.custom-control-label span.radio-selected {
+          opacity: 1;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+        .cmb-type-sidekick-radio-icons .cmb2-list input.custom-control-input:checked+label.custom-control-label span.radio-option {
+          opacity: 0;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+
+      /********************* 
+        Sidekick Radio Buttons  (Updated: 18-10-03)
+      *********************/ 
+       
+       .cmb-type-sidekick-radio-buttons .btn:first-child {
+			border-top-left-radius: 2rem;
+    		border-bottom-left-radius: 2rem;
+        }
+        .cmb-type-sidekick-radio-buttons .btn:last-child {
+			border-top-right-radius: 2rem;
+    		border-bottom-right-radius: 2rem;
+        }
+       .cmb-type-sidekick-radio-buttons .btn:not(.active) {
+		    opacity: .6;
+		}
+		.cmb-type-sidekick-radio-buttons .btn:not(.active):hover {
+		    opacity: 1;
+		}
+		.cmb-type-sidekick-radio-buttons .btn.active:focus {
+			box-shadow: none !important;
+		}
+
+      /********************* 
+        Sidekick Switch TOGGLE  (Updated: 18-10-03)
+      *********************/
+        .custom-control.sidekick-switch-toggle {
+          position: relative;
+          display: block;
+          min-height: 1.5rem;
+          padding: 0;
+        }
+        .sidekick-switch-toggle input.custom-control-input+label.custom-control-label {
+          padding: 0 0 0 52px;
+        }
+        .sidekick-switch-toggle input.custom-control-input:focus~label.custom-control-label::before {
+          border-color: transparent;
+          box-shadow: none;
+        }
+        .sidekick-switch-toggle input.custom-control-input+label.custom-control-label:after, 
+        .sidekick-switch-toggle input.custom-control-input+label.custom-control-label:before {
+          content: '';
+          display: block;
+          -webkit-border-radius: 25rem;
+          border-radius: 25rem;
+          position: absolute;
+        }
+        .sidekick-switch-toggle input.custom-control-input+label.custom-control-label:before {
+          width: 43px;
+          height: 22px;
+          left: 0;
+          top: -1px;
+          background: #929faa;
+          -webkit-transition: background .4s ease;
+          transition: background .4s ease;
+        }
+        .sidekick-switch-toggle input.custom-control-input:checked+label.custom-control-label:before { /* Default */
+          background-color: #007bff;
+        }
+        .sidekick-switch-toggle input.custom-control-input+label.custom-control-label:after {
+          width: 20px;
+          height: 20px;
+          left: 1px;
+          top: 0;
+          -webkit-transition: left .4s ease;
+          transition: left .4s ease;
+          background: #fff;
+          background: -webkit-linear-gradient(top,#fff 0,#eef4f7 100%);
+          background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#eef4f7));
+          background: linear-gradient(to bottom,#fff 0,#eef4f7 100%);
+        }
+        .sidekick-switch-toggle input.custom-control-input+label.custom-control-label:hover:after {
+          border-color: #007bff;
+          background: #fff;
+          background: -webkit-linear-gradient(top,#fff 0,#e9f8ff 100%);
+          background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e9f8ff));
+          background: linear-gradient(to bottom,#fff 0,#e9f8ff 100%);
+        }
+        .sidekick-switch-toggle input.custom-control-input:checked+label.custom-control-label:after {
+          left: 22px;
+          border-color: #007bff;
+          background: #fff;
+          background: -webkit-linear-gradient(top,#fff 0,#e9f8ff 100%);
+          background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e9f8ff));
+          background: linear-gradient(to bottom,#fff 0,#e9f8ff 100%);
+        }
+
+      /********************* 
+        Sidekick Switch SLIDE  (Updated: 18-10-03)
+      *********************/
+        .custom-control.sidekick-switch-slide {
+          position: relative;
+          display: block;
+          min-height: 1.5rem;
+          padding: 0;
+        }
+        .sidekick-switch-slide input.custom-control-input+label.custom-control-label {
+          padding: 0 0 0 52px;
+        }
+        .sidekick-switch-slide input.custom-control-input:focus~label.custom-control-label::before {
+          border-color: transparent;
+          box-shadow: none;
+        }
+        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:after, 
+        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:before {
+          left: 1px;
+          top: 7px;
+          width: 42px;
+          height: 4px;
+          -webkit-border-radius: 25rem;
+          border-radius: 25rem;
+          background: #929faa;
+          -webkit-transition: background .4s ease;
+          transition: background .4s ease;
+        }
+        .sidekick-switch-slide input.custom-control-input:checked+label.custom-control-label:before {
+          background-color: #343434;
+        }
+        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:after {
+          width: 20px;
+          height: 20px;
+          top: -1px;
+          border: 1px solid transparent;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          -webkit-transition: all .4s ease;
+          transition: all .4s ease;
+          background: #fff;
+          background: -webkit-linear-gradient(top,#fff 0,#e4f6ff 100%);
+          background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e4f6ff));
+          background: linear-gradient(to bottom,#fff 0,#e4f6ff 100%);
+          background: linear-gradient(to bottom,#fff 0,#eef4f7 100%);
+        }
+        .sidekick-switch-slide input.custom-control-input:checked+label.custom-control-label:after {
+          left: 24px;
+        }
+        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:hover:after {
+          border-color: rgba(0, 123, 255, .5);
+          -webkit-transition: all .4s ease;
+          transition: all .4s ease;
+        }
+
+      /********************* 
+        Sidekick Switch BUTTONS  (Updated: 18-10-03)
+      *********************/
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list label.btn:first-child {
+			border-right: none;
+			border-top-left-radius: 2rem;
+    		border-bottom-left-radius: 2rem;
+        }
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list label.btn:last-child {
+			border-left: none;
+			border-top-right-radius: 2rem;
+    		border-bottom-right-radius: 2rem;
+        }
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list label.btn:last-child:hover {
+        background: #ccc;
+          border-left: none;
+          border-color: #ccc;
+        }
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list label.btn:last-child.active {
+          background: #ccc;
+          color: #fff;
+          border-color: #ccc;
+        }
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list .btn:not(.active) {
+          opacity: .6;
+          color: #999;
+        }
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list .btn:not(.active):hover {
+          opacity: 1;
+          color: #fff;
+        }
+        .cmb-type-sidekick-switch-buttons .radio-buttons-list .btn.active:focus {
+			box-shadow: none !important;
+        }
+       
+
+      /********************* 
+        BS4 TEXT ICON INPUTS
+      *********************/
+
+        .sidekickMetabox .input-group .input-group-text {
+          border-color: rgba(197, 214, 222, 0.7);
+        }
+        .sidekickMetabox .input-group.no-icon-border.icon-pos-left .input-group-text {
+          border-right: none;
+        }
+        .sidekickMetabox .input-group.no-icon-border.icon-pos-left input {
+          border-left: none;
+        }
+        .sidekickMetabox .input-group.no-icon-border.icon-pos-right .input-group-text {
+          border-left: none;
+        }
+        .sidekickMetabox .input-group.no-icon-border.icon-pos-right input {
+          border-right: none;
+        }
+
+    .sidekickMetabox .cmb-repeatable-group .cmbhandle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+    }
+    .sidekickMetabox .dashicons-before.cmb-remove-group-row {
+        display: none;
+    }
+    .sidekickMetabox .cmb-repeatable-group h3.cmb-group-title.cmbhandle-title {
+        cursor: pointer;
+    }
+
+
+    .sidekickMetabox .iris-square-inner {
+	    border: 1px solid #ddd;
+	    box-shadow: none !important;
+	    outline: none;
+	    border-radius: .25rem !important;
+	}
+	.sidekickMetabox a.iris-palette {
+	    border-radius: 50% !important;
+	    box-shadow: none !important;
+	}
+	.sidekickMetabox a.iris-palette:nth-child(2n) {
+		border: 1px solid #ddd;
+	}
+
+
+	/*-------------------------------------------------------------
+		DATE & TIME PICKER
+	---------------------------------------------------------------*/
+
+	    
+	    .cmb-type-sidekick-text-datetime-timestamp .sidekick-datepicker, .cmb-type-sidekick-text-datetime-timestamp .sidekick-timepicker {
+		    max-width: 48% !important;
+		    display: inline-block !important;
+		}
+		.cmb-type-sidekick-text-datetime-timestamp .sidekick-datepicker {
+			margin-right: 3%;
+		}
+		.cmb-type-sidekick-text-datetime-timestamp-timezone input,
+		.cmb-type-sidekick-text-datetime-timestamp-timezone select {
+			max-width: 31%;
+			display: inline-block !important;
+		}
+		.cmb-type-sidekick-text-datetime-timestamp-timezone input {
+			margin-right: 2%;
+		}
+		#ui-datepicker-div {
+	        background: #fff;
+	        padding: 15px 5px 10px 5px;
+	        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+	        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+	        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+	        max-width: 325px;
+	    }
+	    #ui-datepicker-div.cmb2-element {
+	        top: calc(50% - 160px) !important;
+	        left: calc(50% - 160px) !important;
+	        position: fixed !important;
+	    }
+	    #ui-datepicker-div table.ui-datepicker-calendar th span {
+	        width: 40px;
+	        line-height: 40px;
+	        height: 40px;
+	        text-align: center;
+	        margin: 1px;
+	        display: block;
+	        color: #555;
+	    }
+	    #ui-datepicker-div table.ui-datepicker-calendar td a {
+	        width: 40px;
+	        line-height: 40px;
+	        height: 40px;
+	        text-align: center;
+	        margin: 1px;
+	        display: block;
+	        text-decoration: none;
+	        border-radius: 50%;
+	        color: #333;
+	    }
+	    #ui-datepicker-div table.ui-datepicker-calendar td a:hover {
+	        background: rgba(0, 123, 255, .3);
+	    }
+	    #ui-datepicker-div table.ui-datepicker-calendar td.ui-datepicker-today a {
+	        background: rgba(75, 81, 93, .3);
+	    }
+	    #ui-datepicker-div table.ui-datepicker-calendar td.ui-datepicker-current-day a {
+	        background: #0069d9;
+	        color: #fff;
+	        font-weight: bold;
+	    }
+	    #ui-datepicker-div .ui-datepicker-header a.ui-datepicker-next {
+	        position: absolute;
+	        top: 20px;
+	        right: 5px;
+	        cursor: pointer;
+	    }
+	    #ui-datepicker-div .ui-datepicker-header a.ui-datepicker-next:after {
+	        display: inline-block;
+	        width: 0;
+	        height: 0;
+	        margin-left: 0.355em;
+	        vertical-align: 0;
+	        content: "";
+	        border-left: 0.3em solid;
+	        border-top: 0.3em solid transparent;
+	        border-bottom: 0.3em solid transparent;
+	    }
+	    #ui-datepicker-div .ui-datepicker-header a.ui-datepicker-prev {
+	        position: absolute;
+	        top: 20px;
+	        left: 5px;
+	        cursor: pointer;
+	    }
+	    #ui-datepicker-div .ui-datepicker-header a.ui-datepicker-prev:hover,
+	    #ui-datepicker-div .ui-datepicker-header a.ui-datepicker-next:hover {
+	        background: rgba(75, 81, 93, .3);
+	    }
+	    #ui-datepicker-div .ui-datepicker-header a.ui-datepicker-prev:before {
+	        display: inline-block;
+	        width: 0;
+	        height: 0;
+	        margin-right: 0.355em;
+	        vertical-align: 0;
+	        content: "";
+	        border-right: 0.3em solid;
+	        border-top: 0.3em solid transparent;
+	        border-bottom: 0.3em solid transparent;
+	    }
+	    #ui-datepicker-div .ui-datepicker-title {
+	        text-align: center;
+	    }
+	    #ui-datepicker-div .ui-datepicker-title select {
+	        width: 30%;
+	        margin: 5px;
+	        text-align: center;
+	        border-radius: 4px !important;
+	    }
+
+	    /***  TIME PICKER  ***/
+
+	    .ui-timepicker-div .ui-datepicker-title {
+	        margin-bottom: 10px;
+	        font-size: 1.6rem;
+	        font-weight: 300;
+	    }
+	    .ui-timepicker-div dt,
+	    .ui-timepicker-div dd {
+	        display: inline-block;
+	        width: 50%;
+	    }
+	    .ui-timepicker-div dt {
+	        text-align: right;
+	        padding-right: 5px;
+	    }
+	    .ui-timepicker-div dd {
+	        text-align: left;
+	    }
+	    .ui-timepicker-div dd.ui_tpicker_time,
+	    .ui-timepicker-div dt.ui_tpicker_time_label {
+	        margin-bottom: 15px;
+	        font-size: 1.4rem;
+	    }
+	    .ui-timepicker-div dt.ui_tpicker_time_label {
+	        width: 45%;
+	    }
+	    .ui-timepicker-div dt.ui_tpicker_hour_label,
+	    .ui-timepicker-div dd.ui_tpicker_hour,
+	    .ui-timepicker-div dt.ui_tpicker_minute_label,
+	    .ui-timepicker-div dd.ui_tpicker_minute {
+	        width: 25%;
+	    }
+	    .ui-timepicker-div dd.ui_tpicker_second,
+	    .ui-timepicker-div dt.ui_tpicker_millisec_label,
+	    .ui-timepicker-div dd.ui_tpicker_millisec,
+	    .ui-timepicker-div dt.ui_tpicker_microsec_label,
+	    .ui-timepicker-div dd.ui_tpicker_microsec,
+	    .ui-timepicker-div dt.ui_tpicker_timezone_label,
+	    .ui-timepicker-div dd.ui_tpicker_timezone
+	     {
+	        display: none;
+	    }
+	    #ui-datepicker-div select {
+	        border-radius: 4px !important;
+	    }
+	    .ui-datepicker-buttonpane.ui-widget-content button {
+	        width: 40%;
+	        box-shadow: none;
+	        border: none;
+	        line-height: 1.5;
+	        padding: .375rem .75rem;
+	        border-radius: .25rem;
+	        vertical-align: middle;
+	        display: inline-block;
+	        font-size: 1rem;
+	        white-space: nowrap;
+	        text-shadow: none;
+	        height: auto;
+	    }
+	    .ui-datepicker-buttonpane.ui-widget-content button.ui-datepicker-current {
+	        margin: 0 2% 0 8%;
+	        color: #fff;
+	        background-color: #868e96;
+	    }
+	    .ui-datepicker-buttonpane.ui-widget-content button.ui-datepicker-current:hover {
+	        margin: 0 2% 0 8%;
+	        color: #fff;
+	        background-color: #727b84;
+	    }
+	    .ui-datepicker-buttonpane.ui-widget-content button.ui-datepicker-close {
+	        margin: 0 8% 0 2%;
+	        color: #fff;
+	        background-color: #007bff;
+	    }
+	    .ui-datepicker-buttonpane.ui-widget-content button.ui-datepicker-close:hover {
+	        background-color: #0062cc;
+	    }
+
+
+
+/*-------------------------------------------------------------
+WP ADMIN MENU
+---------------------------------------------------------------*/
+
+@media (min-width: 768px) {
+
+	#adminmenu .wp-submenu-head, 
+	#adminmenu a.menu-top {
+    	font-size: 1rem;
+    }
+
+    #adminmenu .wp-submenu a {
+    	font-size: .875rem !important;
+    }
+
+    #adminmenu .wp-submenu li.current, 
+    #adminmenu .wp-submenu li.current a, 
+    #adminmenu .wp-submenu li.current a:hover {
+    	font-weight: 500;
+    }
+
+    #wpcontent, #wpfooter {
+        margin-left: 250px;
+    }
+
+    /* WP 5.0 */
+    .auto-fold .edit-post-header,
+    .auto-fold .components-notice-list {
+    	left: 250px;
+	}
+
+    #adminmenu, 
+    #adminmenu .wp-submenu, 
+    #adminmenuback, #adminmenuwrap {
+        background-color: #2D323E;
+        width: 250px;
+    }
+
+    #adminmenu, 
+    #adminmenuback, 
+    #adminmenuwrap {
+        box-shadow: none;
+    }
+
+    ul#adminmenu {
+        margin: 0;
+    }
+
+    #adminmenu a {
+        color: #fff !important;
+    }
+
+    #adminmenu li.menu-top:not(.wp-menu-open):hover, 
+    #adminmenu li.opensub>a.menu-top, 
+    #adminmenu li>a.menu-top:focus,
+    #adminmenu .wp-submenu li:hover {
+        background-color: rgba(255,255,255,.05);
+    }
+
+    #adminmenu li.menu-top.wp-menu-open:hover {
+        background-color: transparent;
+    }
+
+    #adminmenu .wp-has-current-submenu .wp-submenu, 
+    #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, 
+    #adminmenu .wp-has-current-submenu.opensub .wp-submenu, 
+    #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, 
+    .no-js li.wp-has-current-submenu:hover .wp-submenu {
+        background-color: rgba(0,0,0,.3);
+    }
+
+    #adminmenu .wp-submenu {
+        left: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 1300px;
+    }
+
+}
+
+
+/*-------------------------------------------------------------
+WP 5.0 FIXES
+---------------------------------------------------------------*/
+
+.revisions-controls {
+    box-sizing: initial;
+}
