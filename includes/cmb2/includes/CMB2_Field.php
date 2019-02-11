@@ -1085,13 +1085,14 @@ class CMB2_Field extends CMB2_Base {
 
 		$style = ! $this->args( 'show_names' ) ? ' style="display:none;"' : '';
 
-		if ( ( $sidekick_type=='sidekick_checkbox' ) || ( $sidekick_type=='sidekick_switch_toggle' ) || ( $sidekick_type=='sidekick_switch_slide' )  || ( $sidekick_type=='sidekick_checkbox_icon' ) ) {
+		if ( ( $sidekick_type=='sidekick_checkbox' ) || ( $sidekick_type=='sidekick_switch_toggle' ) || ( $sidekick_type=='sidekick_switch_slide' ) ) {
 			$sidekick_checkbox = ' class="custom-control-label" ';
 
 			return sprintf( "\n" . '<label%1$s %4$s for="%2$s">%3$s</label>' . "\n", $style, $this->id(), $this->args( 'name' ), $sidekick_checkbox );
 		}
 
 		if ( $sidekick_type=='sidekick_checkbox_icon' ) {
+			$sidekick_checkbox = ' class="custom-control-label" ';
 			$icon_check = '<span class="check-off ' . $color_unselected . '">
 		    		<i class="' . $icon_unselected . ' ' . $size_unselected . '"></i>
 		    	</span>
