@@ -394,9 +394,36 @@
 		}
 
       /********************* 
-        Sidekick Switch TOGGLE  (Updated: 18-10-03)
+        Sidekick Switch TOGGLE  (Updated: 19-02-11) To make new BS4 switch conform to previous css
       *********************/
-        .custom-control.sidekick-switch-toggle {
+      	.custom-switch.sidekick-switch-toggle .custom-control-label {
+		    padding-left: 15px;
+		}
+  		.custom-switch.sidekick-switch-toggle .custom-control-label::before {
+		    left: -36px;
+		    width: 43px;
+		    height: 22px;
+		    pointer-events: all;
+		    border-radius: 25rem;
+		    border: none;
+		    top: -1px;
+		}
+		.custom-switch.sidekick-switch-toggle .custom-control-label::after {
+		    top: 0px;
+		    left: -35px;
+		    width: 20px;
+		    height: 20px;
+		    background-color: #adb5bd;
+		    border-radius: 25rem;
+		}
+		.custom-switch.sidekick-switch-toggle input.custom-control-input:focus~label.custom-control-label::before {
+          border-color: transparent;
+          box-shadow: none;
+        }
+         .custom-switch.sidekick-switch-toggle input.custom-control-input:checked+label.custom-control-label:after {
+         	left: -26px;
+         }
+        /*.custom-control.sidekick-switch-toggle {
           position: relative;
           display: block;
           min-height: 1.5rem;
@@ -427,7 +454,7 @@
           transition: background .4s ease;
         }
         .sidekick-switch-toggle input.custom-control-input:checked+label.custom-control-label:before { /* Default */
-          background-color: #007bff;
+          /*background-color: #007bff;
         }
         .sidekick-switch-toggle input.custom-control-input+label.custom-control-label:after {
           width: 20px;
@@ -455,7 +482,7 @@
           background: -webkit-linear-gradient(top,#fff 0,#e9f8ff 100%);
           background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e9f8ff));
           background: linear-gradient(to bottom,#fff 0,#e9f8ff 100%);
-        }
+        }*/
 
       /********************* 
         Sidekick Switch SLIDE  (Updated: 18-10-03)
