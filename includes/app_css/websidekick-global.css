@@ -487,28 +487,28 @@
       /********************* 
         Sidekick Switch SLIDE  (Updated: 18-10-03)
       *********************/
-        .custom-control.sidekick-switch-slide {
+        .custom-switch.sidekick-switch-slide {
           position: relative;
           display: block;
           min-height: 1.5rem;
           padding: 0;
         }
-        .sidekick-switch-slide input.custom-control-input+label.custom-control-label {
+        .custom-switch.sidekick-switch-slide input.custom-control-input+label.custom-control-label {
           padding: 0 0 0 52px;
         }
-        .sidekick-switch-slide input.custom-control-input:focus~label.custom-control-label::before {
+        .custom-switch.sidekick-switch-slide input.custom-control-input:focus~label.custom-control-label::before {
           border-color: transparent;
           box-shadow: none;
         }
-        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:after, 
-        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:before {
+        .custom-switch.sidekick-switch-slide input.custom-control-input+label.custom-control-label:after, 
+        .custom-switch.sidekick-switch-slide input.custom-control-input+label.custom-control-label:before {
           content: '';
           display: block;
           position: absolute;
           left: 0;
           top: 0;
         }
-        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:before {
+        .custom-switch.sidekick-switch-slide input.custom-control-input+label.custom-control-label:before {
           left: 1px;
           top: 7px;
           width: 42px;
@@ -519,10 +519,10 @@
           -webkit-transition: background .4s ease;
           transition: background .4s ease;
         }
-        .sidekick-switch-slide input.custom-control-input:checked+label.custom-control-label:before {
+        .custom-switch.sidekick-switch-slide input.custom-control-input:checked+label.custom-control-label:before {
           background-color: #343434;
         }
-        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:after {
+        .custom-switch.sidekick-switch-slide input.custom-control-input+label.custom-control-label:after {
           width: 20px;
           height: 20px;
           top: -1px;
@@ -537,10 +537,10 @@
           background: linear-gradient(to bottom,#fff 0,#e4f6ff 100%);
           background: linear-gradient(to bottom,#fff 0,#eef4f7 100%);
         }
-        .sidekick-switch-slide input.custom-control-input:checked+label.custom-control-label:after {
-          left: 24px;
+        .custom-switch.sidekick-switch-slide input.custom-control-input:checked+label.custom-control-label:after {
+          left: 11px;
         }
-        .sidekick-switch-slide input.custom-control-input+label.custom-control-label:hover:after {
+        .custom-switch.sidekick-switch-slide input.custom-control-input+label.custom-control-label:hover:after {
           border-color: rgba(0, 123, 255, .5);
           -webkit-transition: all .4s ease;
           transition: all .4s ease;
