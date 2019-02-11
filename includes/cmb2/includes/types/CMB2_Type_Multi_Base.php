@@ -46,21 +46,21 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 
 
 	/**
-	 * NINJA Generates html for ninja_list_item with input  @CG
+	 * Sidekick Generates html for sidekick_list_item with input  @CG
 	 *
 	 * @since  1.1.0
 	 * @param  array $args Override arguments
 	 * @param  int   $i    Iterator value
 	 * @return string       Gnerated list item html
 	 */
-	public function ninja_list_input( $args = array(), $i ) {
+	public function sidekick_list_input( $args = array(), $i ) {
 
 		$list_type = $this->field->args( 'type' );
 
-		if ( ( $list_type=='ninja_radio' ) ) {
+		if ( ( $list_type=='sidekick_radio' ) ) {
 			$lt = 'custom-radio ';
 		}
-		elseif ( ( $list_type=='ninja_multicheck' ) ) {
+		elseif ( ( $list_type=='sidekick_multicheck' ) ) {
 			$lt = 'custom-checkbox ';
 		}
 		else {
@@ -76,7 +76,7 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 			$ld = '';
 		}
 
-		$a = $this->parse_args( 'ninja_list_input', array(
+		$a = $this->parse_args( 'sidekick_list_input', array(
 			'type'  => 'radio',
 			'class' => 'custom-control-input cmb2-option',
 			'name'  => $this->_name(),
@@ -90,14 +90,14 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 
 
 	/**
-	 * NINJA Generates html for ninja_radio_buttons input   18-10-03 @CG
+	 * SIDEKICK Generates html for sidekick_radio_buttons input   18-10-03 @CG
 	 *
 	 * @since  1.1.0
 	 * @param  array $args Override arguments
 	 * @param  int   $i    Iterator value
 	 * @return string       Gnerated list item html
 	 */
-	public function ninja_radio_buttons( $args = array(), $i ) {
+	public function sidekick_radio_buttons( $args = array(), $i ) {
 
 		$btn_color = $this->field->args( 'btn_color' );
 
@@ -116,14 +116,14 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 
 
 	/**
-	 * NINJA Generates html for radio icons input   18-10-03 @CG
+	 * SIDEKICK Generates html for radio icons input   18-10-03 @CG
 	 *
 	 * @since  1.1.0
 	 * @param  array $args Override arguments
 	 * @param  int   $i    Iterator value
 	 * @return string       Gnerated list item html
 	 */
-	public function ninja_radio_icons( $args = array(), $i ) {
+	public function sidekick_radio_icons( $args = array(), $i ) {
 
 		$display_class		= $this->field->args( 'display_class' );  // Use BS4 display markup "d-block" or "d-inline-block"
 		$icon_unselected	= $this->field->args( 'icon_unselected' );  // full fontawesome markup: 'fal fa-truck'
@@ -174,20 +174,20 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 	}
 
 	/**
-	 * NINJA Generates html for ninja_list item with checkbox input
+	 * SIDEKICK Generates html for sidekick_list item with checkbox input
 	 *
 	 * @since  1.1.0
 	 * @param  array $args Override arguments
 	 * @param  int   $i    Iterator value
 	 * @return string       Gnerated list item html
 	 */
-	public function ninja_list_input_checkbox( $args, $i ) {
+	public function sidekick_list_input_checkbox( $args, $i ) {
 		$saved_value = $this->field->escaped_value();
 		if ( is_array( $saved_value ) && in_array( $args['value'], $saved_value ) ) {
 			$args['checked'] = 'checked';
 		}
 		$args['type'] = 'checkbox';
-		return $this->ninja_list_input( $args, $i );
+		return $this->sidekick_list_input( $args, $i );
 	}
 
 	/**
