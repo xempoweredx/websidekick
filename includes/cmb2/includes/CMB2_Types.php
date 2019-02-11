@@ -753,6 +753,10 @@ class CMB2_Types {
 		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Select', $args )->render();
 	}
 
+	public function sidekick_taxonomy_select( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Taxonomy_Select', $args )->render();
+	}
+
 	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
 	public function sidekick_switch_toggle( $args = array(), $is_checked = null ) {
 		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.

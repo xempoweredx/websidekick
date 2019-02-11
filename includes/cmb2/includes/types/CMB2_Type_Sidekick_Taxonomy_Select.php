@@ -58,6 +58,7 @@ class CMB2_Type_Sidekick_Taxonomy_Select extends CMB2_Type_Taxonomy_Base {
 
 		return $this->rendered(
 			$this->types->select( array(
+				'class'   => 'custom-select',
 				'options' => $options,
 			) )
 		);
