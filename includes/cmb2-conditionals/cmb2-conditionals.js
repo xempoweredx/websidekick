@@ -167,6 +167,7 @@ jQuery( document ).ready( function( $ ) {
 
 		// Hide all conditional elements
 		$( '[data-conditional-id]', conditionContext ).parents( '.form-group:first' ).hide();
+		// $( '[data-conditional-id]', conditionContext ).parents( '.cmb-row:first' ).hide();
 
 		// Selectively trigger the change event.
 		uniqueFormElms = [];
@@ -197,6 +198,7 @@ jQuery( document ).ready( function( $ ) {
 
 			// Hide all conditional elements
 			$( '[data-conditional-id]', row ).parents( '.form-group:first' ).hide();
+			// $( '[data-conditional-id]', row ).parents( '.cmb-row:first' ).hide();
 
 			rowFormElms = $( ':input', row );
 			if ( 1 === rowFormElms.length || ! rowFormElms.is( ':checked' ) ) {
