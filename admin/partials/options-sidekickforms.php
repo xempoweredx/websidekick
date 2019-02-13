@@ -130,6 +130,11 @@ $sidekickforms_options = new_cmb2_box( $args );
 				'id' => 'time1',
 				'type' => 'sidekick_text_time',
 				// 'time_format' => 'h:i:s A',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-clock',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
 			) );
 
@@ -152,6 +157,11 @@ $sidekickforms_options = new_cmb2_box( $args );
 						// 'yearRange' => '1990:'. ( date( 'Y' ) + 10 ),
 					//) ),
 				//),
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-calendar',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
 			) );
 
@@ -169,12 +179,12 @@ $sidekickforms_options = new_cmb2_box( $args );
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
 			) );
 
-			$sidekickforms_options->add_field( array(
+			/*$sidekickforms_options->add_field( array(
 				'name' => 'Sidekick Date/Time Picker/Time zone Combo (serialized DateTime object)',
 				'id'   => 'datetime_timestamp_timezone1',
 				'type' => 'sidekick_text_datetime_timestamp_timezone',
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
-			) );
+			) ); */
 
 			$sidekickforms_options->add_field( array(
 				'name' => 'Sidekick Textarea',
