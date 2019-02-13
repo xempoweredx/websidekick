@@ -21,9 +21,10 @@
 			'name'    => __( '', 'websidekick' ),
 			'id'      => 'hidden_head',
 			'type'    => 'title',
-			'before_row' => '<div class="row"><!-- Section Wrap -->
-								<div class="col-12 col-md-6">
-									<div class="form-row">',
+			'before_row' => '<div class="sidekickMetabox"><!-- Required for WP Gutenberg formatting -->
+								<div class="row"><!-- Section Wrap -->
+									<div class="col-12 col-md-6">
+										<div class="form-row">',
 		) );
 
 		$main_options->add_field( array(
@@ -43,7 +44,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12' ),
+			'classes' => array( 'col-12', 'col-md-6' ),
 		) );
 
 		$main_options->add_field( array(
@@ -55,7 +56,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12' ),
+			'classes' => array( 'col-12', 'col-md-6' ),
 		) );
 
 		$main_options->add_field( array(
@@ -67,7 +68,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12' ),
+			'classes' => array( 'col-12', 'col-md-6' ),
 		) );
 
 		$main_options->add_field( array(
@@ -79,7 +80,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12' ),
+			'classes' => array( 'col-12', 'col-md-6' ),
 		) );
 
 		$main_options->add_field( array(
@@ -91,7 +92,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12' ),
+			'classes' => array( 'col-12', 'col-md-6' ),
 		) );
 
 		$main_options->add_field( array(
@@ -103,7 +104,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12' ),
+			'classes' => array( 'col-12', 'col-md-6' ),
 		) );
 
 		$main_options->add_field( array(
@@ -139,7 +140,7 @@
 			'id'   => 'maintenance',
 			'type' => 'sidekick_switch_toggle',
 			'before' => '<div class="mb-2">Maintenatnce Mode Option</div>',
-			'desc' => 'Select "Enable" and "Save Changes". Maintenance Mode options show up in main WP Admin Settings menu.',
+			'desc' => 'Select "Enable" and "Save Changes". This does NOT "Activate" Maintenance Mode. Maintenance Mode options show up in main WP Admin "Settings" menu.',
 			'color_unselected'		=> 'text-gray-lighten-7',
 		    'color_selected'	=> 'text-gray-lighten-7',
 		    'bg_unselected'		=> 'bg-gray-lighten-4',
@@ -162,7 +163,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'jq_title',
 			'type'    => 'title',
-			'classes' => array( 'col-12 mb-0' ),
+			'classes' => array( 'col-12 mb-0', 'mt-3' ),
 		) );
 			$main_options->add_field( array(
 				'name'    => __( 'jQuery CDN URL', 'websidekick' ),
@@ -270,6 +271,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'hidden_footer',
 			'type'    => 'title',
-			'after_row'	=> '</div><!-- END Section Wrap -->',
+			'after_row'	=> '</div><!-- END Section Wrap -->
+						</div>',
 		) );
 
