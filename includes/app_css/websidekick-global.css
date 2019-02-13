@@ -602,6 +602,60 @@
           border-right: none;
         }
 
+
+    /********************* 
+    * SIDEKICK COLOR PICKER
+    *********************/
+
+	    .sidekickMetabox button.button.wp-color-result {
+		    border-radius: 0 2rem 2rem 0;
+		    font-size: 12px;
+		    box-shadow: none;
+		    margin: 0 5px 5px 0;
+		    padding: 0 0 0 30px;
+		    height: 30px;
+		}
+		.sidekickMetabox span.wp-color-result-text {
+		    line-height: 28px;
+		    border-radius: 0 2rem 2rem 0;
+		}
+		.sidekickMetabox button.button.wp-color-result>span:nth-child(2n) {
+		    height: 28px !important;
+		}
+		.sidekickMetabox .wp-picker-container input[type=text].wp-color-picker {
+		    width: 75px;
+		    font-size: 14px;
+		    font-family: monospace;
+		    line-height: 22px;
+		    margin: 0;
+		    vertical-align: top;
+		    padding: 3px 0;
+		    text-align: center;
+		}
+		.sidekickMetabox input.button.button-small.wp-picker-clear {
+		    height: 30px;
+		    box-shadow: none;
+		    font-size: 12px;
+		    border-radius: 2rem;
+		    padding: 0 12px;
+		}
+
+		.sidekickMetabox .iris-square-inner {
+		    border: 1px solid #ddd;
+		    box-shadow: none !important;
+		    outline: none;
+		    border-radius: .25rem !important;
+		}
+		.sidekickMetabox a.iris-palette {
+		    border-radius: 50% !important;
+		    box-shadow: none !important;
+		}
+		.sidekickMetabox a.iris-palette:nth-child(2n) {
+			border: 1px solid #ddd;
+		}
+
+
+
     .sidekickMetabox .cmb-repeatable-group .cmbhandle {
         position: absolute;
         top: 0;
@@ -614,21 +668,6 @@
     .sidekickMetabox .cmb-repeatable-group h3.cmb-group-title.cmbhandle-title {
         cursor: pointer;
     }
-
-
-    .sidekickMetabox .iris-square-inner {
-	    border: 1px solid #ddd;
-	    box-shadow: none !important;
-	    outline: none;
-	    border-radius: .25rem !important;
-	}
-	.sidekickMetabox a.iris-palette {
-	    border-radius: 50% !important;
-	    box-shadow: none !important;
-	}
-	.sidekickMetabox a.iris-palette:nth-child(2n) {
-		border: 1px solid #ddd;
-	}
 
 
 	/*-------------------------------------------------------------
