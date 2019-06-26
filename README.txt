@@ -67,48 +67,74 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+= 1.1.5 =
+* Added Bootstrap 4.3.1 "Sidekick version" which contains all standard BS4 styles with a few added text and color classes for more functionality.
+* Added "BLB_ScriptTagger" plugin to core Sidekick settings for simple Bible referrence hover-over popups.
+* Added "List Taxonomy Widget" plugin to core Sidekick settings.
+* Upgraded CMB2 to version 2.5.1.
+* Created CPT, TAX, & METABOX templates compatible with WP 5.0 Geutenburg editor.
+* Updated additional color palettes stylesheets.
+* Cleaned up a lot of old code and unused files.
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+= 1.1.4 =
+* Added "AD-to-any" plugin to core Sidekick settings.
+* Added "WP Maintenance" plugin to core Sidekick settings.
+* Added "Widget Shortcode" plugin to core Sidekick settings.
 
-== Upgrade Notice ==
+= 1.1.3 =
+* Added ability to change jQuery, Bootstrap, and Fontawesome file locations and versions from WP admin panel.
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+= 1.1.2 =
+* Bug fixes.
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+= 1.1.1 =
+* Remove FA5 config file.
+* Preparing for WP 5.0.
 
-== Arbitrary section ==
+= 1.1.0 =
+* Added custom fields for core files CDN information (URL, Integrity, Version), making core file updates much easier.
+* Added functions filter to properly output integrity attribute.
+* Removed core files directories to decrease plugin size.
+* Added Custom Taxonomy List widget.
+* Remove old, unused files.
+* Updated md_color.css
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+= 1.0.9 =
+* Fix styling issues with "Ninja" inputs and fields.
+* Lots of modifications and additions to CMB2.
+* Update to FontAwesome Pro 5.3.1.
+* Update and add to Examples.php.
 
-== A brief Markdown Example ==
+= 1.0.8 =
+* Major updates to CMB2.
+* Update to Bootstrap 4.1.3
+* Update to FontAwesome Pro 2.0
 
-Ordered list:
+= 1.0.7 =
+* Name and file parent change from StrapNinja.
 
-1. Some feature
-1. Another feature
-1. Something else about the plugin
+= 1.0.6 =
+* Back to some self hosted files for more control.
+* Added Gitauth key option.
 
-Unordered list:
+= 1.0.5 =
+* Move to Google Fonts CDN.
+* Remove unused files and directories.
 
-* something
-* something else
-* third thing
+= 1.0.4 =
+* Move BS4, FA5, jQuery to CDNs.
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
+= 1.0.3 =
+* Another TEST release.
 
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
+= 1.0.2 =
+* Test Release ONLY.
 
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
+= 1.0.1 =
+* Update to main plugin file and Readme.
 
-`<?php code(); // goes in backticks ?>`
+= 1.0.0 =
+* Installed core files.
+* Installed Bootstrap 4.0.1.
+* Installed FontAwesome 5.0.10.
+* Installed CMB2.
