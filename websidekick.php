@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:       Web Sidekick
  * Plugin URI:        https://github.com/xempoweredx/websidekick
- * Description:       Wordpress Admin plugin which adds Bootstrap 4, CMB2, Fontawesome 5, and more.
+ * Description:       Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extra functionality and flexability.
  * Version:           1.1.5
  * Author:            Chad Gray
  * Author URI:        https://github.com/xempoweredx
