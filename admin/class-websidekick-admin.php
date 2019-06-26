@@ -145,7 +145,9 @@ class Websidekick_Admin {
 		$screen	= get_current_screen();
 		$options = get_option('websidekick_main_options');
 
+		// Uncomment if you want to use Google fonts insted of local files. Be sure to comment out local files.
 		//wp_register_style( $this->plugin_name . '_fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,600|Raleway:200,300,400,600', false, $this->version, 'all' );
+
 		wp_register_style( $this->plugin_name . '_fonts', ( plugin_dir_url( dirname( __FILE__ ) ) . 'includes/fonts/fonts.css' ), false, $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name . '_fonts');
 
@@ -154,10 +156,6 @@ class Websidekick_Admin {
 
 		wp_register_style( $this->plugin_name . '_websidekick_utilities', ( plugin_dir_url( dirname( __FILE__ ) ) . 'includes/app_css/websidekick-bootstrap-utilities.css' ), false, '4.1.3', 'all' );
 		wp_enqueue_style( $this->plugin_name . '_websidekick_utilities');
-
-		/* Commented out until I can fix isues with WP 5 block editor
-		wp_register_style( $this->plugin_name . '_bs4_wp_helper', ( plugin_dir_url( dirname( __FILE__ ) ) . 'includes/app_css/bootstrap_helper.css' ), false, $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name . '_bs4_wp_helper'); */
 
 		wp_register_style( $this->plugin_name . '_app_global', ( plugin_dir_url( dirname( __FILE__ ) ) . 'includes/app_css/websidekick-global.css' ), false, $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name . '_app_global');
@@ -195,9 +193,6 @@ class Websidekick_Admin {
 		wp_register_script( $this->plugin_name . '_input_mask', ( plugin_dir_url( dirname( __FILE__ ) ) . 'includes/input-mask/jquery.mask.min.js' ), false, '1.14.15', true );
 		wp_enqueue_script( $this->plugin_name . '_input_mask');
 
-		//wp_register_script( $this->plugin_name . '_replacetext', ( plugin_dir_url( dirname( __FILE__ ) ) . 'includes/replacetext/jquery.ba-replacetext.js' ), false, $this->version, true );
-		//wp_enqueue_script( $this->plugin_name . '_replacetext');
-
 	}
 
 	/**
@@ -226,4 +221,4 @@ class Websidekick_Admin {
 	    }
 	}
 
-}
+} 
