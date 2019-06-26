@@ -62,3 +62,81 @@
   font-weight: 700;
   src: local('Product Sans Bold'), local('ProductSans-Bold'), url("ProductSans/ProductSans-Bold.woff2") format("woff2");
 }
+
+/***************************************************
+* Montserrat
+**************************************************/
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Montserrat Light'), local('Montserrat-Light'), url("montserrat/montserrat-300.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url("montserrat/montserrat-400.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Montserrat Italic'), local('Montserrat-Italic'), url("montserrat/montserrat-400-itallics.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url("montserrat/montserrat-600.woff2") format('woff2');
+}
+
+/***************************************************
+* Open Sans
+**************************************************/
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url("OpenSans/OpenSans-Light.woff2") format('woff2');
+}
+/* @font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url("OpenSans/OpenSans-Regular.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url("OpenSans/OpenSans-Italic.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url("OpenSans/OpenSans-SemiBold.woff2") format('woff2');
+} */
+
+/***************************************************
+* Roboto
+**************************************************/
+
+@font-face {
+  font-family: Roboto;
+  src: url("roboto/Roboto-Regular.woff2?v=1.1.0") format("woff2"), url("roboto/Roboto-Regular.woff?v=1.1.0") format("woff"), url("roboto/Roboto-Regular.ttf?v=1.1.0") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: Roboto;
+  src: url("roboto/Roboto-Regular.woff2?v=1.1.0") format("woff2"), url("roboto/Roboto-Regular.woff?v=1.1.0") format("woff"), url("roboto/Roboto-Regular.ttf?v=1.1.0") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: Roboto;
+  src: url("roboto/Roboto-Medium.woff2?v=1.1.0") format("woff2"), url("roboto/Roboto-Medium.woff?v=1.1.0") format("woff"), url("roboto/Roboto-Medium.ttf?v=1.1.0") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
