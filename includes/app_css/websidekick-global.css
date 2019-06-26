@@ -888,6 +888,10 @@ WP ADMIN MENU
         margin-left: 250px;
     }
 
+    body.auto-fold .edit-post-layout__content {
+	    margin-right: 250px !important;
+	}
+
     /* WP 5.0 */
     .auto-fold .edit-post-header,
     .auto-fold .components-notice-list {
@@ -937,6 +941,12 @@ WP ADMIN MENU
     #adminmenu .wp-submenu {
         left: 250px;
     }
+}
+
+@media (min-width: 782px) and (min-width: 960px) {
+	body.auto-fold .edit-post-layout__content {
+	    margin-left: 250px;
+	}
 }
 
 @media (min-width: 1200px) {
