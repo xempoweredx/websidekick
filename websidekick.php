@@ -11,7 +11,7 @@
  * Plugin Name:       Web Sidekick
  * Plugin URI:        https://github.com/xempoweredx/websidekick
  * Description:       Wordpress Admin plugin which adds Bootstrap 4, CMB2, Fontawesome 5, and more.
- * Version:           1.1.2
+ * Version:           1.1.5
  * Author:            Chad Gray
  * Author URI:        https://github.com/xempoweredx
  * License:           GPL-2.0+
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'WEBSIDEKICK_VERSION', '1.1.2' );
+define( 'WEBSIDEKICK_VERSION', '1.1.5' );
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
@@ -75,10 +75,23 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/list-taxonomy-widget/list-t
 require_once plugin_dir_path( __FILE__ ) . 'includes/widget-shortcode/init.php';
 
 /**
+ * Get the AddToAny file!
+ */
+// https://wordpress.org/plugins/widget-shortcode/
+require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
+
+/**
  * Get the Maintenance Mode init file if enables in Main Settings tab!
  */
 if (get_option('websidekick_main_options')['maintenance'] ) {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/wp-maintenance-mode/wp-maintenance-mode.php';
+}
+
+/**
+ * Get the Maintenance Mode init file if enables in Main Settings tab!
+ */
+if (get_option('websidekick_main_options')['blb_tagger'] ) {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/BLB_ScriptTagger/BLB_ScriptTagger.php';
 }
 
 /**
