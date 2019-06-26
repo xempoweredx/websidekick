@@ -67,8 +67,8 @@ class Websidekick {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'WEBSIDEKICK_VERSION' ) ) {
-			$this->version = WEBSIDEKICK_VERSION;
+		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
+			$this->version = PLUGIN_NAME_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -162,7 +162,7 @@ class Websidekick {
 		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_main_options_metabox' );
 		$this->loader->add_filter( 'script_loader_tag', $plugin_admin, 'add_attribs_to_scripts', 10, 3 );
 		$this->loader->add_action( 'admin_footer', $plugin_admin, 'bottom_scripts', 99 );
-
+		
 	}
 
 	/**
