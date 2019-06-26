@@ -40,7 +40,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'primary_link_color',
 			'type'    => 'colorpicker',
-			'default' => '#007bff',
+			//'default' => '#007bff',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -48,11 +48,11 @@
 		) );
 
 		$main_options->add_field( array(
-			'name'    => __( 'Primary Link-Hover Color', 'websidekick' ),
+			'name'    => __( 'Primary Link Hover Color', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'primary_link_hover_color',
 			'type'    => 'colorpicker',
-			'default' => '#0056b3',
+			//'default' => '#0056b3',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -64,7 +64,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_bg_color',
 			'type'    => 'colorpicker',
-			'default' => '#ffffff',
+			//'default' => '#ffffff',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -76,7 +76,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_link_color',
 			'type'    => 'colorpicker',
-			'default' => '#23343b',
+			//'default' => '#23343b',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -84,11 +84,11 @@
 		) );
 
 		$main_options->add_field( array(
-			'name'    => __( 'Menu Link-Hover Color', 'websidekick' ),
+			'name'    => __( 'Menu Link Hover Color', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_link_hover_color',
 			'type'    => 'colorpicker',
-			'default' => '#23343b',
+			//'default' => '#23343b',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -96,11 +96,35 @@
 		) );
 
 		$main_options->add_field( array(
-			'name'    => __( 'Menu Link-Hover BG Color', 'websidekick' ),
+			'name'    => __( 'Menu Link Hover BG Color', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_link_hover_bg_color',
 			'type'    => 'colorpicker',
-			'default' => '',
+			//'default' => '',
+			'options' => array(
+				'alpha' => true, // Make this a rgba color picker.
+			),
+			'classes' => array( 'col-12', 'col-md-6' ),
+		) );
+
+		$main_options->add_field( array(
+			'name'    => __( 'Mobile Menu BG Color', 'websidekick' ),
+			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
+			'id'      => 'mobile_menu_bg_color',
+			'type'    => 'colorpicker',
+			//'default' => '#007bff',
+			'options' => array(
+				'alpha' => true, // Make this a rgba color picker.
+			),
+			'classes' => array( 'col-12', 'col-md-6' ),
+		) );
+
+		$main_options->add_field( array(
+			'name'    => __( 'Main Text Color', 'websidekick' ),
+			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
+			'id'      => 'main_text_color',
+			'type'    => 'colorpicker',
+			//'default' => '#555555',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -147,6 +171,32 @@
 		    'bg_selected'		=> 'bg-green-lighten-2',
 			'classes' => array( 'col-12' ),
 		) );
+		
+		$main_options->add_field( array(
+			'name' => 'Enable',
+			'id'   => 'blb_tagger',
+			'type' => 'sidekick_switch_toggle',
+			'before' => '<div class="mb-2">BLB Script Tagger</div>',
+			'desc' => 'Select "Enable" and "Save Changes". BLB Script Tagger options show up in main WP Admin "Settings" menu.',
+			'color_unselected'		=> 'text-gray-lighten-7',
+		    'color_selected'	=> 'text-gray-lighten-7',
+		    'bg_unselected'		=> 'bg-gray-lighten-4',
+		    'bg_selected'		=> 'bg-green-lighten-2',
+			'classes' => array( 'col-12' ),
+		) );
+		
+	/*	$main_options->add_field( array(
+			'name' => 'Enable',
+			'id'   => 'blb_search',
+			'type' => 'sidekick_switch_toggle',
+			'before' => '<div class="mb-2">BLB Search Widget</div>',
+			//'desc' => 'Select "Enable" and "Save Changes". BLB Script Tagger options show up in main WP Admin "Settings" menu.',
+			'color_unselected'		=> 'text-gray-lighten-7',
+		    'color_selected'	=> 'text-gray-lighten-7',
+		    'bg_unselected'		=> 'bg-gray-lighten-4',
+		    'bg_selected'		=> 'bg-green-lighten-2',
+			'classes' => array( 'col-12' ),
+		) );*/
 
 		$main_options->add_field( array(
 			'name'    => __( '', 'websidekick' ),
