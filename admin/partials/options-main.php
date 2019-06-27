@@ -132,6 +132,21 @@
 		) );
 
 		$main_options->add_field( array(
+			'name' => 'Mobile Menu Style',
+			'id'   => 'mobile_menu_style',
+			'type' => 'sidekick_radio',
+			'list_display'		=> 'inline',  // 'stacked' or 'inline'. Defaults to 'stacked' if empty.
+			'show_option_none' 	=> false,
+			'options'			=> array(
+		    	'bs4'			=> __('Bootstrap', 'websidekick'),
+		    	'bar'			=> __('Bottom Bar', 'websidekick'),
+		    	'fab'			=> __('FAB Menu Button', 'websidekick'),
+		    ),
+		    'default' => 'bs4',
+		'classes' => array( 'col-12'),
+		) );
+
+		$main_options->add_field( array(
 			'name'    => __( '', 'websidekick' ),
 			'id'      => 'hidden_mid',
 			'type'    => 'title',
@@ -191,6 +206,19 @@
 			'type' => 'sidekick_switch_toggle',
 			'before' => '<div class="mb-2">BLB Script Tagger</div>',
 			'desc' => 'Select "Enable" and "Save Changes". BLB Script Tagger options show up in main WP Admin "Settings" menu.',
+			'color_unselected'		=> 'text-gray-lighten-7',
+		    'color_selected'	=> 'text-gray-lighten-7',
+		    'bg_unselected'		=> 'bg-gray-lighten-4',
+		    'bg_selected'		=> 'bg-green-lighten-2',
+			'classes' => array( 'col-12' ),
+		) );
+
+		$main_options->add_field( array(
+			'name' => 'Enable',
+			'id'   => 'blb_search',
+			'type' => 'sidekick_switch_toggle',
+			'before' => '<div class="mb-2">BLB Text Search</div>',
+			'desc' => 'Select "Enable" and "Save Changes". BLB wil be displayed at the top of active sidebar.',
 			'color_unselected'		=> 'text-gray-lighten-7',
 		    'color_selected'	=> 'text-gray-lighten-7',
 		    'bg_unselected'		=> 'bg-gray-lighten-4',
