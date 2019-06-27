@@ -78,7 +78,9 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/widget-shortcode/init.php';
  * Get the AddToAny file!
  */
 // https://wordpress.org/plugins/widget-shortcode/
-require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
+if (get_option('websidekick_main_options')['a2a'] ) {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
+}
 
 /**
  * Get the Maintenance Mode init file if enables in Main Settings tab!
