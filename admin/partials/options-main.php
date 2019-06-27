@@ -40,7 +40,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'primary_link_color',
 			'type'    => 'colorpicker',
-			//'default' => '#007bff',
+			'default' => '#007bff',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -52,7 +52,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'primary_link_hover_color',
 			'type'    => 'colorpicker',
-			//'default' => '#0056b3',
+			'default' => '#0056b3',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -64,7 +64,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_bg_color',
 			'type'    => 'colorpicker',
-			//'default' => '#ffffff',
+			'default' => '#ffffff',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -76,7 +76,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_link_color',
 			'type'    => 'colorpicker',
-			//'default' => '#23343b',
+			'default' => '#23343b',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -88,7 +88,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_link_hover_color',
 			'type'    => 'colorpicker',
-			//'default' => '#23343b',
+			'default' => '#23343b',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -100,7 +100,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'menu_link_hover_bg_color',
 			'type'    => 'colorpicker',
-			//'default' => '',
+			'default' => 'transparent',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -112,7 +112,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'mobile_menu_bg_color',
 			'type'    => 'colorpicker',
-			//'default' => '#007bff',
+			'default' => '#007bff',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -124,7 +124,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'main_text_color',
 			'type'    => 'colorpicker',
-			//'default' => '#555555',
+			'default' => '#555555',
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
@@ -233,6 +233,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'jq_cdn',
 				'type'    => 'sidekick_text',
+				'default' => 'https://code.jquery.com/jquery-3.3.1.min.js',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -240,6 +241,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'jq_integrity',
 				'type'    => 'sidekick_text',
+				'default' => 'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -247,6 +249,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'jq_version',
 				'type'    => 'sidekick_text',
+				'default' => '3.3.1',
 				'classes' => array( 'col-12 col-sm-2 mb-4' ),
 			) );
 
@@ -262,6 +265,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'bs_cdn',
 				'type'    => 'sidekick_text',
+				'default' => '/wp-content/plugins/websidekick/includes/bootstrap/4.3.1/bootstrap.min.css',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -276,6 +280,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'bs_version',
 				'type'    => 'sidekick_text',
+				'default' => '4.3.1',
 				'classes' => array( 'col-12 col-sm-2' ),
 			) );
 			$main_options->add_field( array(
@@ -283,6 +288,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'bsjs_cdn',
 				'type'    => 'sidekick_text',
+				'default' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -290,6 +296,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'bsjs_integrity',
 				'type'    => 'sidekick_text',
+				'default' => 'sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -297,6 +304,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'bsjs_version',
 				'type'    => 'sidekick_text',
+				'default' => '4.3.1',
 				'classes' => array( 'col-12 col-sm-2 mb-4' ),
 			) );
 
@@ -312,6 +320,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'fa_cdn',
 				'type'    => 'sidekick_text',
+				'default' => 'https://kit.fontawesome.com/74abdefa97.js',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -319,6 +328,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'fa_integrity',
 				'type'    => 'sidekick_text',
+				'default' => 'sha384-0R8uMnSIOPPA/NyiuIGzF0KZK3ufYUg1PTAXKjJwPys6vjFgtPpxoyGIF+ekBFlR',
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -326,6 +336,7 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'fa_version',
 				'type'    => 'sidekick_text',
+				'default' => 'latest',
 				'classes' => array( 'col-12 col-sm-2 mb-4' ),
 			) );
 
