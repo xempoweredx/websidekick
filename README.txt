@@ -23,7 +23,7 @@ If this plugin is used in conjunction with the "Sidekick Starter Theme", you can
 1. Download or clone latest stable release. 
 2. Upload `websidekick.php` to the `/wp-content/plugins/` directory. File structure should look like '/plugins/websidekick/websidekick.php'.
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+4. Navigate to Sidekick Options > Sidekick Options. Default values should be in the inputs. Scroll to the bottom and click "Save". That enqueues all necessary files.
 
 == Changelog ==
 
