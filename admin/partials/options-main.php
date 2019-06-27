@@ -171,6 +171,19 @@
 		    'bg_selected'		=> 'bg-green-lighten-2',
 			'classes' => array( 'col-12' ),
 		) );
+
+		$main_options->add_field( array(
+			'name' => 'Enable',
+			'id'   => 'a2a',
+			'type' => 'sidekick_switch_toggle',
+			'before' => '<div class="mb-2">Add-to-any Share Buttons</div>',
+			'desc' => 'Select "Enable" and "Save Changes". Add-to-any options show up in main WP Admin "Settings" menu.',
+			'color_unselected'		=> 'text-gray-lighten-7',
+		    'color_selected'	=> 'text-gray-lighten-7',
+		    'bg_unselected'		=> 'bg-gray-lighten-4',
+		    'bg_selected'		=> 'bg-green-lighten-2',
+			'classes' => array( 'col-12' ),
+		) );
 		
 		$main_options->add_field( array(
 			'name' => 'Enable',
