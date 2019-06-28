@@ -35,15 +35,19 @@ It also has a few additional plugins integrated into the core for more powerful 
 - **CMB2 Taxonomy** (https://github.com/jcchavezs/cmb2-taxonomy). Create custom metaboxes and inputs for custom terms.
 - **CMB2 Term Select** (https://github.com/CMB2/cmb2-term-select). Special CMB2 Field that allows users to define an autocomplete text field for terms.
 - **jQuery Input Mask** (https://github.com/igorescobar/jQuery-Mask-Plugin). A jQuery Plugin to make masks on form fields and HTML elements.
+- **Add-to-any** (https://wordpress.org/plugins/add-to-any/). The AddToAny Share Buttons plugin for WordPress increases traffic & engagement by helping people share your posts and pages to any service.
+    + Enable/Disable via toggle switch
+- **Wp Maintenance Mode** (https://github.com/Designmodocom/WP-Maintenance-Mode). Adds a splash page to your site that lets visitors know your site is down for maintenance. It's perfect for a coming soon page.
+    + Enable/Disable via toggle switch
+- **Blueletter Bible Script Tagger** (https://www.blueletterbible.org/webtools/BLB_ScriptTagger.cfm). The "BLB ScriptTagger" is a free tool that you can integrate into your website or blog to automatically create a hover-over display for all Bible references on the page. The hover-over reveals the verse text and provides a link for further study at the Blue Letter Bible website.
+    + Enable/Disable via toggle switch
+- **List Taxonomy Widget** (https://wordpress.org/plugins/list-custom-taxonomy-widget/). The List Custom Taxonomy Widget is a quick and easy way to display custom taxonomies. Simply choose the taxonomy name you want to display from an auto-populated list.
+- **jQuery Replace Text** (http://benalman.com/projects/jquery-replacetext-plugin/).
 
 #### Plugins to work with Websidekick Starter Theme
 
-- **Add-to-any** (https://wordpress.org/plugins/add-to-any/). The AddToAny Share Buttons plugin for WordPress increases traffic & engagement by helping people share your posts and pages to any service.
-- **Wp Maintenance Mode** (https://github.com/Designmodocom/WP-Maintenance-Mode). Adds a splash page to your site that lets visitors know your site is down for maintenance. It's perfect for a coming soon page. The new Bot functionality is here!
-- **Blueletter Bible Script Tagger** (https://www.blueletterbible.org/webtools/BLB_ScriptTagger.cfm). The "BLB ScriptTagger" is a free tool that you can integrate into your website or blog to automatically create a hover-over display for all Bible references on the page. The hover-over reveals the verse text and provides a link for further study at the Blue Letter Bible website.
 - **Blueletter Bible Text Search Tool** (https://www.blueletterbible.org/webtools/BLB_websearch.cfm). Allows your website's users to search the Bible for passages of Scripture, for individual words or combinations of words, for phrases, and even by Strong's numbers.
-- **List Taxonomy Widget** (https://wordpress.org/plugins/list-custom-taxonomy-widget/). The List Custom Taxonomy Widget is a quick and easy way to display custom taxonomies. Simply choose the taxonomy name you want to display from an auto-populated list.
-- **jQuery Replace Text** (http://benalman.com/projects/jquery-replacetext-plugin/).
+    + Enable/Disable via toggle switch
 
 ## Plugin Features
 
@@ -54,9 +58,6 @@ It also has a few additional plugins integrated into the core for more powerful 
 - **Custom Metabox Templates** 
 - Sidekick **custom input types** use **BS4 form styling** in place of default WP or CMB2 styles. They also add a lot of style and functionality to backend forms and inputs, which is helpful if you are developing a site for a client who will access the Dashboard. They just look better.
     + There is a metabox template and an entire page of examples for the custom input types. They use a mixture of Bootstrap 4 and FontAwesome.
-- Enable/Disable WP Maintenatnce Mode Option.
-- Enable/Disable Add-to-any Share Buttons for posts, pages, and CPTs.
-- Enable/Disable BLB Script Tagger.
 
 #### Plugin Features For Websidekick Starter Theme
 
@@ -68,10 +69,8 @@ If this plugin is used in conjunction with the "websidekick-starter-theme" (http
 - Adds text-box input option for script security hashes.
 - Select mobile menu style (3 options).
 - Enable/Disable BLB Text Search.
-- Uses BS4 form styles instead of default CMB2 or WP form styles when creating Custom Metaboxes & Inputs.
-- Adds List Taxonomy Widget.
 
-**Color Selector Options**
+**Theme Color Selector Options**
 
 - Main Body Text
 - Primary Link
