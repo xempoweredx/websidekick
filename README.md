@@ -24,14 +24,17 @@ It also has a few additional plugins integrated into the core for more powerful 
 #### Plugins For Admin Area
 
 - **jQuery 3.3.1** (https://code.jquery.com/)
-- **Bootstrap** (https://getbootstrap.com/docs/4.3/components/alerts/)
-- **FontAwesome** (https://fontawesome.com/start)
+    + Easily edit/upgrade release via text-box input. Just change CDN link reference, hash, and version text.
+- **Bootstrap 4.3.1** (https://getbootstrap.com/docs/4.3/components/alerts/)
+    + Easily edit/upgrade release via text-box input. Just change CDN link reference, hash, and version text.
+- **FontAwesome Free Latest version** (https://fontawesome.com/start)
+    + Easily upgrade to FA Pro, if you have that subscription, and input the new reference info via text-box input. Just change CDN link reference, hash, and version text.
 - **CMB2** (https://github.com/CMB2/CMB2/wiki). CMB2 is a developer's toolkit for building metaboxes, custom fields, and forms for WordPress that will blow your mind. Easily manage meta for posts, terms, users, comments, or create custom option pages.
-- **CMB2** Conditionals (https://github.com/jcchavezs/cmb2-conditionals). Allows developers to relate fields so one of them could only appear when one other have an specific value or when is not empty.
-- **CMB2** Field Post Search Ajax (https://github.com/alexis-magina/cmb2-field-post-search-ajax). Custom field for CMB2 to attach posts to each others.
-- **CMB2** Taxonomy (https://github.com/jcchavezs/cmb2-taxonomy). Create custom metaboxes and inputs for custom terms.
-- **CMB2** Term Select (https://github.com/CMB2/cmb2-term-select). Special CMB2 Field that allows users to define an autocomplete text field for terms.
-- **jQuery** Input Mask (https://github.com/igorescobar/jQuery-Mask-Plugin). A jQuery Plugin to make masks on form fields and HTML elements.
+- **CMB2 Conditionals** (https://github.com/jcchavezs/cmb2-conditionals). Allows developers to relate fields so one of them could only appear when one other have an specific value or when is not empty.
+- **CMB2 Field Post Search Ajax** (https://github.com/alexis-magina/cmb2-field-post-search-ajax). Custom field for CMB2 to attach posts to each others.
+- **CMB2 Taxonomy** (https://github.com/jcchavezs/cmb2-taxonomy). Create custom metaboxes and inputs for custom terms.
+- **CMB2 Term Select** (https://github.com/CMB2/cmb2-term-select). Special CMB2 Field that allows users to define an autocomplete text field for terms.
+- **jQuery Input Mask** (https://github.com/igorescobar/jQuery-Mask-Plugin). A jQuery Plugin to make masks on form fields and HTML elements.
 
 #### Plugins to work with Websidekick Starter Theme
 
@@ -49,7 +52,11 @@ It also has a few additional plugins integrated into the core for more powerful 
 - **Custom Post Types Templates** Easy Custom Post Type & Custom Taxonomy creation. Navigate to websidekick/admin/cpt, duplicate CPT_TEMPLATE.php, rename it to CPT_Mynewcpt.php (I usually use the registered post type i.e CPT_Books.php). Then open the new file in your text editor and replace "Mycpt" plural and singular with your new CPT name, list the custom taxonomies it will use, save and upload.
 - **Custom Taxonomy Templates** Custom Taxonomies follow the same process websidekick/admin/tax.
 - **Custom Metabox Templates** 
-- Uses **BS4 form styling** in place of default WP or CMB2 styles.
+- Sidekick **custom input types** use **BS4 form styling** in place of default WP or CMB2 styles. They also add a lot of style and functionality to backend forms and inputs, which is helpful if you are developing a site for a client who will access the Dashboard. They just look better.
+    + There is a metabox template and an entire page of examples for the custom input types. They use a mixture of Bootstrap 4 and FontAwesome.
+- Enable/Disable WP Maintenatnce Mode Option.
+- Enable/Disable Add-to-any Share Buttons for posts, pages, and CPTs.
+- Enable/Disable BLB Script Tagger.
 
 #### Plugin Features For Websidekick Starter Theme
 
@@ -60,9 +67,6 @@ If this plugin is used in conjunction with the "websidekick-starter-theme" (http
 - Latest Fontawesome Free release. Easily upgrade to FA Pro, if you have that subscription, and input the new reference info via text-box input.
 - Adds text-box input option for script security hashes.
 - Select mobile menu style (3 options).
-- Enable/Disable Maintenatnce Mode Option.
-- Enable/Disable Add-to-any Share Buttons.
-- Enable/Disable BLB Script Tagger.
 - Enable/Disable BLB Text Search.
 - Uses BS4 form styles instead of default CMB2 or WP form styles when creating Custom Metaboxes & Inputs.
 - Adds List Taxonomy Widget.
