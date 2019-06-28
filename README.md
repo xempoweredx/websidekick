@@ -58,14 +58,18 @@ It also has a few additional plugins integrated into the core for more powerful 
 - **Custom Metabox Templates** 
 - Sidekick **custom input types** use **BS4 form styling** in place of default WP or CMB2 styles. They also add a lot of style and functionality to backend forms and inputs, which is helpful if you are developing a site for a client who will access the Dashboard. They just look better.
     + There is a metabox template and an entire page of examples for the custom input types. They use a mixture of Bootstrap 4 and FontAwesome.
+- Replaces default WP-Admin jQuery version with v3.3.1. Easily edit/upgrade release via text-box input.
+- Bootstrap 4.1.3 framework available for Admin area. Easily edit/upgrade release via text-box input.
+- Latest Fontawesome Free release available for Admin area. Easily upgrade to FA Pro, if you have that subscription, and input the new reference info via text-box input.
+- Adds text-box input option for script security hashes.
 
 #### Plugin Features For Websidekick Starter Theme
 
 If this plugin is used in conjunction with the "websidekick-starter-theme" (https://github.com/xempoweredx/websidekick-starter-theme), the following options will apply to the theme:
 
-- Replaces default WP jQuery version with v. 3.3.1. Easily edit/upgrade release via text-box input.
-- Bootstrap 4.1.3 framework. Easily edit/upgrade release via text-box input.
-- Latest Fontawesome Free release. Easily upgrade to FA Pro, if you have that subscription, and input the new reference info via text-box input.
+- Replaces default WP Frontend jQuery version with v3.3.1. Easily edit/upgrade release via text-box input.
+- Bootstrap 4.1.3 framework available for frontend. Easily edit/upgrade release via text-box input.
+- Latest Fontawesome Free release available for frontend. Easily upgrade to FA Pro, if you have that subscription, and input the new reference info via text-box input.
 - Adds text-box input option for script security hashes.
 - Select mobile menu style (3 options).
 - Enable/Disable BLB Text Search.
