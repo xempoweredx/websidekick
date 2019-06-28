@@ -1,15 +1,19 @@
 <?php
 
-$singular = 'Type';
-$plural = 'Types';
-$singular_lower = 'type';
-$plural_lower = 'types'; // Main cpt slug
-$menu_icon = 'dashicons-shield';
-$tax = array( 'type-tax1', 'type-tax2', 'type-tax3' );
+/******** Begin Your CPT Edits Here **********/
+
+$singular = 'Mycpt'; // Capitalized singular name
+$plural = 'Mycpts'; //Capitalized plural name
+$singular_lower = 'mycpt'; // lowercase singular name
+$plural_lower = 'mycpt'; // lowercase plural name. **Main cpt slug**
+$menu_icon = 'dashicons-admin-post'; // https://developer.wordpress.org/resource/dashicons/#performance
+$tax = array( 'mycpt-tax1', 'mycpt-tax2', 'mycpt-tax3' ); // List custom taxonomies this CPT will use
 $cap_type = 'post'; // Capability type
+
+/* Uncomment the elements this CPT will support */
 $supports = array(
 	'title',
-	//'editor', //(content)
+	'editor', //(content)
 	//'author',
 	'thumbnail', //(featured image) (current theme must also support Post Thumbnails)
 	//'excerpt',
