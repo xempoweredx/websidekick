@@ -17,21 +17,21 @@ This plugin enqueues Bootstrap 4.x.x, FontAwesome 5.x.x, and replace WP default 
 ## Integrated Open-source Plugins
 
 It also has a few additional plugins integrated into the core for more powerful functionality without having to hunt down and install a ton of different plugins. Simply toggle them on or off in "Sidekick / Main Settings"
-- jQuery (https://code.jquery.com/)
+- jQuery 3.3.1 (https://code.jquery.com/)
 - Bootstrap (https://getbootstrap.com/docs/4.3/components/alerts/)
 - FontAwesome (https://fontawesome.com/start)
-- CMB2 (https://github.com/CMB2/CMB2/wiki)
-- CMB2 Conditionals ()
-- CMB2 Field Post Search Ajax (https://github.com/alexis-magina/cmb2-field-post-search-ajax)
-- CMB2 Taxonomy ()
-- CMB2 Term Select ()
-- jQuery Input Mask ()
-- Add-to-any ()
-- Wp Maintenance Mode ()
-- Blueletter Bible Script Tagger ()
-- Blueletter Bible Text Search Tool ()
-- List Taxonomy Widget ()
-- jQuery Replace Text ()
+- CMB2 (https://github.com/CMB2/CMB2/wiki). CMB2 is a developer's toolkit for building metaboxes, custom fields, and forms for WordPress that will blow your mind. Easily manage meta for posts, terms, users, comments, or create custom option pages.
+- CMB2 Conditionals (https://github.com/jcchavezs/cmb2-conditionals). Allows developers to relate fields so one of them could only appear when one other have an specific value or when is not empty.
+- CMB2 Field Post Search Ajax (https://github.com/alexis-magina/cmb2-field-post-search-ajax). Custom field for CMB2 to attach posts to each others.
+- CMB2 Taxonomy (https://github.com/jcchavezs/cmb2-taxonomy). Create custom metaboxes and inputs for custom terms.
+- CMB2 Term Select (https://github.com/CMB2/cmb2-term-select). Special CMB2 Field that allows users to define an autocomplete text field for terms.
+- jQuery Input Mask (https://github.com/igorescobar/jQuery-Mask-Plugin). A jQuery Plugin to make masks on form fields and HTML elements.
+- Add-to-any (https://wordpress.org/plugins/add-to-any/). The AddToAny Share Buttons plugin for WordPress increases traffic & engagement by helping people share your posts and pages to any service.
+- Wp Maintenance Mode (https://github.com/Designmodocom/WP-Maintenance-Mode). Adds a splash page to your site that lets visitors know your site is down for maintenance. It's perfect for a coming soon page. The new Bot functionality is here!
+- Blueletter Bible Script Tagger (https://www.blueletterbible.org/webtools/BLB_ScriptTagger.cfm). The "BLB ScriptTagger" is a free tool that you can integrate into your website or blog to automatically create a hover-over display for all Bible references on the page. The hover-over reveals the verse text and provides a link for further study at the Blue Letter Bible website.
+- Blueletter Bible Text Search Tool (https://www.blueletterbible.org/webtools/BLB_websearch.cfm). Allows your website's users to search the Bible for passages of Scripture, for individual words or combinations of words, for phrases, and even by Strong's numbers.
+- List Taxonomy Widget (https://wordpress.org/plugins/list-custom-taxonomy-widget/). The List Custom Taxonomy Widget is a quick and easy way to display custom taxonomies. Simply choose the taxonomy name you want to display from an auto-populated list.
+- jQuery Replace Text (http://benalman.com/projects/jquery-replacetext-plugin/).
 
 
 If this plugin is used in conjunction with the "websidekick-starter-theme" (https://github.com/xempoweredx/websidekick-starter-theme), you can set a lot of the main theme colors in the plugin Main Settings. Sidekick Starter Theme is a child theme developed for the awesome Understrap WP Theme.
