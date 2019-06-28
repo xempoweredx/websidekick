@@ -230,7 +230,7 @@ class Websidekick_Admin {
 	 */
 	public function register_cpt_metaboxes() {
 
-		//require_once( plugin_dir_path(__FILE__) . 'meta/Meta_CPT_Resources.php' );
+		require_once( plugin_dir_path(__FILE__) . 'meta/Meta_CPT_Sermons.php' );
 
 	}
 
