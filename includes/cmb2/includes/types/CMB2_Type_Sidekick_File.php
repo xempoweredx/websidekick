@@ -24,7 +24,7 @@ class CMB2_Type_Sidekick_File extends CMB2_Type_File_Base {
 		$options = (array) $field->options();
 
 		$a = $this->args = $this->parse_args( 'file', array(
-			'class'           => 'cmb2-upload-file d-block',
+			'class'           => 'cmb2-upload-file d-block form-control',
 			'id'              => $this->_id(),
 			'name'            => $this->_name(),
 			'value'           => $field->escaped_value(),
