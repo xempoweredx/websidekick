@@ -17,21 +17,21 @@ This plugin enqueues Bootstrap 4.x.x, FontAwesome 5.x.x, and replace WP default 
 ## Integrated Open-source Plugins
 
 It also has a few additional plugins integrated into the core for more powerful functionality without having to hunt down and install a ton of different plugins. Simply toggle them on or off in "Sidekick / Main Settings"
-- jQuery
-- Bootstrap
-- FontAwesome
-- CMB2
-- CMB2 Conditionals
-- CMB2 Field Post Search Ajax
-- CMB2 Taxonomy
-- CMB2 Term Select
-- jQuery Input Mask
-- Add-to-any
-- Wp Maintenance Mode
-- Blueletter Bible Script Tagger
-- Blueletter Bible Text Search Tool
-- List Taxonomy Widget
-- jQuery Replace Text
+- jQuery (https://code.jquery.com/)
+- Bootstrap (https://getbootstrap.com/docs/4.3/components/alerts/)
+- FontAwesome (https://fontawesome.com/start)
+- CMB2 (https://github.com/CMB2/CMB2/wiki)
+- CMB2 Conditionals ()
+- CMB2 Field Post Search Ajax (https://github.com/alexis-magina/cmb2-field-post-search-ajax)
+- CMB2 Taxonomy ()
+- CMB2 Term Select ()
+- jQuery Input Mask ()
+- Add-to-any ()
+- Wp Maintenance Mode ()
+- Blueletter Bible Script Tagger ()
+- Blueletter Bible Text Search Tool ()
+- List Taxonomy Widget ()
+- jQuery Replace Text ()
 
 
 If this plugin is used in conjunction with the "websidekick-starter-theme" (https://github.com/xempoweredx/websidekick-starter-theme), you can set a lot of the main theme colors in the plugin Main Settings. Sidekick Starter Theme is a child theme developed for the awesome Understrap WP Theme.
