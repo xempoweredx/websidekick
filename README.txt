@@ -12,11 +12,28 @@ Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extr
 
 == Description ==
 
-This plugin enqueues Bootstrap 4.x.x, FontAwesome 5.x.x, and replace WP default jQuery version with jquery.min 3.3.1 for use in the WP admin area. It also uses CMB2 for easy custom metabox creation (including a few custom fields such as text imputs with icons, BS4 selects, toggles, switches, and more). 
+This plugin enqueues Bootstrap 4.x.x, FontAwesome 5.x.x, and replace WP default jQuery version with jquery.min 3.3.1 for use in the WP admin area. Easily edit/upgrade versions & CDN links via WP Admin Dashboard settings. It uses CMB2 for easy custom metabox creation (including a few custom fields such as text imputs with icons, BS4 selects, toggles, switches, and more). 
 
 It also has a few additional plugins integrated into the core for more powerful functionality without having to hunt down and install a ton of different plugins. Simply toggle them on or off in "Sidekick / Main Settings"
+- Integrated Open Source Plugins/Scripts -
+- jQuery
+- Bootstrap
+- FontAwesome
+- CMB2
+- CMB2 Conditionals
+- CMB2 Field Post Search Ajax
+- CMB2 Taxonomy
+- CMB2 Term Select
+- jQuery Input Mask
+- Add-to-any
+- Wp Maintenance Mode
+- Blueletter Bible Script Tagger
+- Blueletter Bible Text Search Tool
+- List Taxonomy Widget
+- jQuery Replace Text
 
-If this plugin is used in conjunction with the "Sidekick Starter Theme", you can set a lot of the main theme colors in the plugin Main Settings. Sidekick Starter Theme is a child theme developed for the awesome Understrap WP Theme.
+
+If this plugin is used in conjunction with the "websidekick-starter-theme" (https://github.com/xempoweredx/websidekick-starter-theme), you can set a lot of the main theme colors in the plugin Main Settings. Sidekick Starter Theme is a child theme developed for the awesome Understrap WP Theme.
 
 == Installation ==
 
