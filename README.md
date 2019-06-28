@@ -1,13 +1,13 @@
-# websidekick
+# Websidekick WP Admin Plugin
 
-Contributors: xempoweredx<br/>
-Donate link: https://github.com/xempoweredx<br/>
-Tags: admin<br/>
-Requires at least: 3.0.1<br/>
-Tested up to: 5.2.2<br/>
-Stable tag: 1.1.5<br/>
-License: GPLv2 or later<br/>
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+**Contributors**: xempoweredx<br/>
+**Donate link**: https://github.com/xempoweredx<br/>
+**Tags**: admin<br/>
+**Requires at least**: 3.0.1<br/>
+**Tested up to**: 5.2.2<br/>
+**Stable tag**: 1.1.5<br/>
+**License**: GPLv2 or later<br/>
+**License** URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extra functionality and flexability.
 
