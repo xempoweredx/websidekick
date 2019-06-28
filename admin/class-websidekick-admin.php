@@ -196,6 +196,45 @@ class Websidekick_Admin {
 	}
 
 	/**
+	 * Register custom post types
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_cpts() {
+
+		require_once( plugin_dir_path(__FILE__) . 'cpt/CPT_Sermons.php' );
+		//require_once( plugin_dir_path(__FILE__) . 'cpt/CPT_Resources.php' );
+
+	}
+
+	/**
+	 * Register custom taxonomies
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_tax() {
+
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Speakers.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Series.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Topics.php' );
+		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Resources_Formats.php' );
+		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Resources_Authors.php' );
+		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_References.php' );
+
+	}
+
+	/**
+	 * Register CPT metaboxes.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_cpt_metaboxes() {
+
+		//require_once( plugin_dir_path(__FILE__) . 'meta/Meta_CPT_Resources.php' );
+
+	}
+
+	/**
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
