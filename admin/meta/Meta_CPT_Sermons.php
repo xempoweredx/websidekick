@@ -10,7 +10,7 @@ $hidden = '_sermon_hidden_';
 ********************************************************************************************************/
 
 
-$cn_sermon_meta = new_cmb2_box( array(
+$sidekick_sermon_meta = new_cmb2_box( array(
 	'id'            => $prefix . 'sermon_info',
 	'title'         => esc_html__( 'Sermon Information', 'cmb2' ),
 	'object_types'  => array( 'sermons' ), // Post type
@@ -19,7 +19,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 	'__back_compat_meta_box' => true,
 ) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 	    'id'				=> $hidden . 'begin',
 	    'type'				=> 'title',
 	    'before_row'		=> 
@@ -27,7 +27,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 			<div class="form-row">',
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 		'name'			=> esc_html__( 'FB Video ID', 'cmb2' ),
 		'id'    		=> $prefix . 'fb_vid_id',
 		'desc' 			=> esc_html__( 'Just the ID number from the FB video URL', 'cmb2' ),
@@ -40,7 +40,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 		'classes'		=> array( 'col-12', 'col-md-4', 'col-lg-3' ),
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 		'name'			=> esc_html__( 'Scripture References', 'cmb2' ),
 		'id'    		=> $prefix . 'scripture_ref',
 		'desc' 			=> esc_html__( 'Separate references with a comma', 'cmb2' ),
@@ -53,7 +53,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 		'classes'		=> array( 'col-12', 'col-md-4', 'col-lg-3' ),
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 		'name'			=> esc_html__( 'Sermon Outline PDF', 'cmb2' ),
 		'id'    		=> $prefix . 'outline',
 		'desc' 			=> esc_html__( 'Insert URL or upload', 'cmb2' ),
@@ -67,7 +67,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 		'classes'		=> array( 'col-12', 'col-md-4', 'col-lg-3' ),
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 		'name'			=> esc_html__( 'Audio File', 'cmb2' ),
 		'id'    		=> $prefix . 'audio',
 		'desc' 			=> esc_html__( 'Insert URL or upload', 'cmb2' ),
@@ -81,7 +81,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 		'classes'		=> array( 'col-12', 'col-md-4', 'col-lg-3' ),
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 		'name'			=> esc_html__( 'Video File', 'cmb2' ),
 		'id'    		=> $prefix . 'video',
 		'desc' 			=> esc_html__( 'Insert URL or upload', 'cmb2' ),
@@ -95,7 +95,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 		'classes'		=> array( 'col-12', 'col-md-4', 'col-lg-3' ),
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 		'name'			=> esc_html__( 'Youtube Video ID', 'cmb2' ),
 		'id'    		=> $prefix . 'youtube',
 		'desc' 			=> esc_html__( 'NOT full URL. Just the video ID.', 'cmb2' ),
@@ -108,7 +108,7 @@ $cn_sermon_meta = new_cmb2_box( array(
 		'classes'		=> array( 'col-12', 'col-md-4', 'col-lg-3' ),
 	) );
 
-	$cn_sermon_meta->add_field( array(
+	$sidekick_sermon_meta->add_field( array(
 	    'id'				=> $hidden . 'end',
 	    'type'				=> 'title',
 	    'after_row'		=> 
