@@ -216,7 +216,7 @@ class Websidekick_Admin {
 
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Speakers.php' );
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Series.php' );
-		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Topics.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Services.php' );
 		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Resources_Formats.php' );
 		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Resources_Authors.php' );
 		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_References.php' );
