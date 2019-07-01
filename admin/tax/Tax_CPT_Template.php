@@ -1,5 +1,6 @@
 <?php
 
+$slug = 'tax-slug';
 $singular = 'Taxonomy';
 $plural = 'Taxonomies';
 $singular_lower = 'taxonomy';
@@ -12,7 +13,7 @@ $labels = array(
 	'menu_name'                  => __( $plural, 'websidekick' ),
 	'all_items'                  => __( 'All ' . $plural, 'websidekick' ),
 	'parent_item'                => __( 'Parent ' . $singular, 'websidekick' ),
-	'parent_item_colon'          => __( 'Parent ' . $singular ':', 'websidekick' ),
+	'parent_item_colon'          => __( 'Parent ' . $singular . ':', 'websidekick' ),
 	'new_item_name'              => __( 'New ' . $singular . ' Name', 'websidekick' ),
 	'add_new_item'               => __( 'Add New ' . $singular, 'websidekick' ),
 	'edit_item'                  => __( 'Edit ' . $singular, 'websidekick' ),
@@ -38,5 +39,5 @@ $args = array(
 	'show_tagcloud'              => true,
 	'show_in_rest'               => true,
 );
-register_taxonomy( $plural, $cpts, $args );
+register_taxonomy( $slug, $cpts, $args );
 	
