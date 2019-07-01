@@ -1,19 +1,16 @@
 <?php
 
-/******** Begin Your CPT Edits Here **********/
-
-$singular = 'Mycpt'; // Capitalized singular name
-$plural = 'Mycpts'; //Capitalized plural name
-$singular_lower = 'mycpt'; // lowercase singular name
-$plural_lower = 'mycpt'; // lowercase plural name. **Main cpt slug**
-$menu_icon = 'dashicons-admin-post'; // https://developer.wordpress.org/resource/dashicons/#performance
-$tax = array( 'mycpt-tax1', 'mycpt-tax2', 'mycpt-tax3' ); // List custom taxonomies this CPT will use
+$slug = 'cpt-slug';
+$singular = 'Type';
+$plural = 'Types';
+$singular_lower = 'type';
+$plural_lower = 'types'; // Main cpt slug
+$menu_icon = 'dashicons-shield';
+$tax = array( 'type-tax1', 'type-tax2', 'type-tax3' );
 $cap_type = 'post'; // Capability type
-
-/* Uncomment the elements this CPT will support */
 $supports = array(
 	'title',
-	'editor', //(content)
+	//'editor', //(content)
 	//'author',
 	'thumbnail', //(featured image) (current theme must also support Post Thumbnails)
 	//'excerpt',
@@ -25,11 +22,11 @@ $supports = array(
 	//'post-formats', 
 );
 $rewrite = array (
-	'slug'					=> __( $plural_lower, 'websidekick-types' ),  // Customize the permastruct slug. Defaults to $post_type key.
+	'slug'					=> __( $slug, 'websidekick-types' ),  // Customize the permastruct slug. Defaults to $post_type key.
 	'with_front'			=> true,  // Default true
 	'feeds'					=> true,  // Default true
 	'pages'					=> true,  // Default true
-	//'ep_mask'				=> __( $plural_lower, 'websidekick-types' ),  // Endpoint mask to assign. If not specified and permalink_epmask is set, inherits from $permalink_epmask. If not specified and permalink_epmask is not set, defaults to EP_PERMALINK.
+	//'ep_mask'				=> __( $slug, 'websidekick-types' ),  // Endpoint mask to assign. If not specified and permalink_epmask is set, inherits from $permalink_epmask. If not specified and permalink_epmask is not set, defaults to EP_PERMALINK.
 );
 
 /******** Stop Editing **********/
@@ -87,12 +84,12 @@ $args = array(
     'can_export'            => true,
     'has_archive'           => true, 
     'rewrite'				=> $rewrite,   
-    'query_var'				=> $plural_lower,  // Defaults to $post_type key.
+    'query_var'				=> $slug,  // Defaults to $post_type key.
     'delete_with_user'		=> null,  // Default null.
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => $cap_type,
     'show_in_rest'          => true,
-    'rest_base'             => $plural_lower,
+    'rest_base'             => $slug,
 );
-register_post_type( $plural_lower, $args );
+register_post_type( $slug, $args );
