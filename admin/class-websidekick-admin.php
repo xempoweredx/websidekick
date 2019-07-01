@@ -86,6 +86,7 @@ class Websidekick_Admin {
 		//}
 		// Set up the options pages.
 			require_once  ( plugin_dir_path( __FILE__ ) . 'partials/options-main.php' );
+			require_once  ( plugin_dir_path( __FILE__ ) . 'partials/options-menu.php' );
 			require_once  ( plugin_dir_path( __FILE__ ) . 'partials/options-sidekickforms.php' );
 			require_once  ( plugin_dir_path( __FILE__ ) . 'partials/options-examples.php' );
 		// Get the "tab_cb" markup.
@@ -203,6 +204,7 @@ class Websidekick_Admin {
 	public function register_cpts() {
 
 		require_once( plugin_dir_path(__FILE__) . 'cpt/CPT_Sermons.php' );
+		require_once( plugin_dir_path(__FILE__) . 'cpt/CPT_Resources.php' );
 
 	}
 
@@ -215,7 +217,9 @@ class Websidekick_Admin {
 
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Speakers.php' );
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Series.php' );
-		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Services.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Sermons_Topics.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Resources_Authors.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Resources_Formats.php' );
 
 	}
 
@@ -226,7 +230,7 @@ class Websidekick_Admin {
 	 */
 	public function register_cpt_metaboxes() {
 
-		require_once( plugin_dir_path(__FILE__) . 'meta/Meta_CPT_Sermons.php' );
+		require_once( plugin_dir_path(__FILE__) . 'meta/Meta_CPT_Resources.php' );
 
 	}
 

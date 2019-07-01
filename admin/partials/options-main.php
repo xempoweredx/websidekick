@@ -22,9 +22,7 @@
 			'id'      => 'hidden_head',
 			'type'    => 'title',
 			'before_row' => '<div class="sidekickMetabox"><!-- Required for WP Gutenberg formatting -->
-								<div class="row"><!-- Section Wrap -->
-									<div class="col-12 col-md-6">
-										<div class="form-row">',
+								<div class="row"><!-- Section Wrap -->',
 		) );
 
 		$main_options->add_field( array(
@@ -44,7 +42,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12', 'col-md-6' ),
+			'classes' => array( 'col-12', 'col-md-6', 'col-lg-4' ),
 		) );
 
 		$main_options->add_field( array(
@@ -56,67 +54,7 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12', 'col-md-6' ),
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( 'Menu BG Color', 'websidekick' ),
-			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
-			'id'      => 'menu_bg_color',
-			'type'    => 'colorpicker',
-			'default' => '#ffffff',
-			'options' => array(
-				'alpha' => true, // Make this a rgba color picker.
-			),
-			'classes' => array( 'col-12', 'col-md-6' ),
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( 'Menu Link Color', 'websidekick' ),
-			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
-			'id'      => 'menu_link_color',
-			'type'    => 'colorpicker',
-			'default' => '#23343b',
-			'options' => array(
-				'alpha' => true, // Make this a rgba color picker.
-			),
-			'classes' => array( 'col-12', 'col-md-6' ),
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( 'Menu Link Hover Color', 'websidekick' ),
-			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
-			'id'      => 'menu_link_hover_color',
-			'type'    => 'colorpicker',
-			'default' => '#23343b',
-			'options' => array(
-				'alpha' => true, // Make this a rgba color picker.
-			),
-			'classes' => array( 'col-12', 'col-md-6' ),
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( 'Menu Link Hover BG Color', 'websidekick' ),
-			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
-			'id'      => 'menu_link_hover_bg_color',
-			'type'    => 'colorpicker',
-			'default' => 'transparent',
-			'options' => array(
-				'alpha' => true, // Make this a rgba color picker.
-			),
-			'classes' => array( 'col-12', 'col-md-6' ),
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( 'Mobile Menu BG Color', 'websidekick' ),
-			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
-			'id'      => 'mobile_menu_bg_color',
-			'type'    => 'colorpicker',
-			'default' => '#007bff',
-			'options' => array(
-				'alpha' => true, // Make this a rgba color picker.
-			),
-			'classes' => array( 'col-12', 'col-md-6' ),
+			'classes' => array( 'col-12', 'col-md-6', 'col-lg-4' ),
 		) );
 
 		$main_options->add_field( array(
@@ -128,36 +66,11 @@
 			'options' => array(
 				'alpha' => true, // Make this a rgba color picker.
 			),
-			'classes' => array( 'col-12', 'col-md-6' ),
+			'classes' => array( 'col-12', 'col-md-6', 'col-lg-4' ),
 		) );
 
 		$main_options->add_field( array(
-			'name' => 'Mobile Menu Style',
-			'id'   => 'mobile_menu_style',
-			'type' => 'sidekick_radio',
-			'list_display'		=> 'inline',  // 'stacked' or 'inline'. Defaults to 'stacked' if empty.
-			'show_option_none' 	=> false,
-			'options'			=> array(
-		    	'bs4'			=> __('Bootstrap', 'websidekick'),
-		    	'bar'			=> __('Bottom Bar', 'websidekick'),
-		    	'fab'			=> __('FAB Menu Button', 'websidekick'),
-		    ),
-		    'default' => 'bs4',
-		'classes' => array( 'col-12'),
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( '', 'websidekick' ),
-			'id'      => 'hidden_mid',
-			'type'    => 'title',
-			'after_row' => '</div><!-- END form-row -->
-						</div><!-- END col-md-6 -->
-						<div class="col-12 col-md-6">
-							<div class="form-row">',
-		) );
-
-		$main_options->add_field( array(
-			'name'    => __( 'Misc Settings', 'websidekick' ),
+			'name'    => __( 'Plugin Options', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'misc_title',
 			'type'    => 'title',
@@ -225,36 +138,23 @@
 		    'bg_selected'		=> 'bg-green-lighten-2',
 			'classes' => array( 'col-12' ),
 		) );
-		
-	/*	$main_options->add_field( array(
-			'name' => 'Enable',
-			'id'   => 'blb_search',
-			'type' => 'sidekick_switch_toggle',
-			'before' => '<div class="mb-2">BLB Search Widget</div>',
-			//'desc' => 'Select "Enable" and "Save Changes". BLB Script Tagger options show up in main WP Admin "Settings" menu.',
-			'color_unselected'		=> 'text-gray-lighten-7',
-		    'color_selected'	=> 'text-gray-lighten-7',
-		    'bg_unselected'		=> 'bg-gray-lighten-4',
-		    'bg_selected'		=> 'bg-green-lighten-2',
-			'classes' => array( 'col-12' ),
-		) );*/
 
 		$main_options->add_field( array(
-			'name'    => __( '', 'websidekick' ),
-			'id'      => 'hidden_mid2',
+			//'name'    => __( 'Core Files Settings', 'websidekick' ),
+			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
+			'id'      => 'core_title',
 			'type'    => 'title',
-			'after_row' => '</div><!-- END row -->
-						</div><!-- END col-md-6 -->
-					</div><!-- END Section Wrap -->
-					<div class="row"><!-- Section Wrap -->',
+			'classes' => array( 'col-12 mb-0', 'mt-3' ),
+			'after'	  => '<h2 class="font-weight-normal">Core Files Settings</h2>',
 		) );
+		
 
 		$main_options->add_field( array(
 			'name'    => __( 'jQuery Settings', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'jq_title',
 			'type'    => 'title',
-			'classes' => array( 'col-12 mb-0', 'mt-3' ),
+			'classes' => array( 'col-12 mb-0' ),
 		) );
 			$main_options->add_field( array(
 				'name'    => __( 'jQuery CDN URL', 'websidekick' ),
@@ -373,7 +273,7 @@
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'hidden_footer',
 			'type'    => 'title',
-			'after_row'	=> '</div><!-- END Section Wrap -->
-						</div>',
+			'after_row'	=> '</div><!-- END .row Section Wrap -->
+						</div><!-- END sidekickMetabox -->',
 		) );
 
