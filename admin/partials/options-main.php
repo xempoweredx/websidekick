@@ -162,6 +162,11 @@
 				'id'      => 'jq_cdn',
 				'type'    => 'sidekick_text',
 				'default' => 'https://code.jquery.com/jquery-3.3.1.min.js',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-link',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -170,6 +175,11 @@
 				'id'      => 'jq_integrity',
 				'type'    => 'sidekick_text',
 				'default' => 'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-hashtag',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -178,6 +188,11 @@
 				'id'      => 'jq_version',
 				'type'    => 'sidekick_text',
 				'default' => '3.3.1',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-edit',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-2 mb-4' ),
 			) );
 
@@ -194,6 +209,11 @@
 				'id'      => 'bs_cdn',
 				'type'    => 'sidekick_text',
 				'default' => '/wp-content/plugins/websidekick/includes/bootstrap/4.3.1/bootstrap.min.css',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-link',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -201,6 +221,11 @@
 				//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 				'id'      => 'bs_integrity',
 				'type'    => 'sidekick_text',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-hashtag',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -209,6 +234,11 @@
 				'id'      => 'bs_version',
 				'type'    => 'sidekick_text',
 				'default' => '4.3.1',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-edit',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-2' ),
 			) );
 			$main_options->add_field( array(
@@ -217,6 +247,11 @@
 				'id'      => 'bsjs_cdn',
 				'type'    => 'sidekick_text',
 				'default' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-link',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -225,6 +260,11 @@
 				'id'      => 'bsjs_integrity',
 				'type'    => 'sidekick_text',
 				'default' => 'sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-hashtag',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -233,6 +273,11 @@
 				'id'      => 'bsjs_version',
 				'type'    => 'sidekick_text',
 				'default' => '4.3.1',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-edit',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-2 mb-4' ),
 			) );
 
@@ -249,6 +294,11 @@
 				'id'      => 'fa_cdn',
 				'type'    => 'sidekick_text',
 				'default' => 'https://kit.fontawesome.com/74abdefa97.js',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-link',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -257,6 +307,11 @@
 				'id'      => 'fa_integrity',
 				'type'    => 'sidekick_text',
 				'default' => 'sha384-0R8uMnSIOPPA/NyiuIGzF0KZK3ufYUg1PTAXKjJwPys6vjFgtPpxoyGIF+ekBFlR',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-hashtag',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-5' ),
 			) );
 			$main_options->add_field( array(
@@ -265,6 +320,11 @@
 				'id'      => 'fa_version',
 				'type'    => 'sidekick_text',
 				'default' => 'latest',
+				'icon_block'		=> 'left',  // options: 'left', 'right'
+				'fa_icon'			=> 'far fa-edit',  // full fontawesome markup: 'fal fa-truck'
+				'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+				'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+				'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
 				'classes' => array( 'col-12 col-sm-2 mb-4' ),
 			) );
 
