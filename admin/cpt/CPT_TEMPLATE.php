@@ -1,11 +1,11 @@
 <?php
 
-$slug = 'cpt-slug';
+$slug = 'cpt-slug'; // Main cpt slug
 $singular = 'Type';
 $plural = 'Types';
 $singular_lower = 'type';
-$plural_lower = 'types'; // Main cpt slug
-$menu_icon = 'dashicons-shield';
+$plural_lower = 'types'; 
+$menu_icon = 'dashicons-shield'; // https://developer.wordpress.org/resource/dashicons/#dashboard
 $tax = array( 'type-tax1', 'type-tax2', 'type-tax3' );
 $cap_type = 'post'; // Capability type
 $supports = array(
