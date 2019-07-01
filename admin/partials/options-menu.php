@@ -122,5 +122,19 @@ $menu_options = new_cmb2_box( $args );
 		    ),
 		    'default' => 'bs4',
 		'classes' => array( 'col-12'),
-		'after_row' => '</div><!-- END .sidekickMetabox --></div><!-- END .row -->',
+		) );
+
+		$menu_options->add_field( array(
+			'name'    => __( 'Col 1 Icon', 'websidekick' ),
+			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
+			'id'      => 'bottom_bar_icon_1',
+			'type'    => 'sidekick_text',
+			'default' => 'fal fa-house',
+			'icon_block'		=> 'left',  // options: 'left', 'right'
+			'fa_icon'			=> 'fab fa-font-awesome-flag',  // full fontawesome markup: 'fal fa-truck'
+			'icon_color'		=> 'text-gray-darken-2',  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+			'icon_bg'			=> 'bg-gray-lighten-6',  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+			'icon_border'		=> 'no',  // Default is 'yes' or true. Option: 'no'.
+			'classes' => array( 'col-12', 'col-md-6', 'col-lg-3' ),
+			'after_row' => '</div><!-- END .sidekickMetabox --></div><!-- END .row -->',
 		) );
