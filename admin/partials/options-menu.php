@@ -34,6 +34,33 @@ $menu_options = new_cmb2_box( $args );
 	) );
 
 		$menu_options->add_field( array(
+			'name' => 'Desktop Menu Scroll Style',
+			'id'   => 'desktop_menu_scroll',
+			'type' => 'sidekick_radio',
+			'list_display'		=> 'inline',  // 'stacked' or 'inline'. Defaults to 'stacked' if empty.
+			'show_option_none' 	=> false,
+			'options'			=> array(
+		    	'scroll'		=> __('Scrollable', 'websidekick'),
+		    	'scrollfixed'	=> __('Scroll Fixed', 'websidekick'),
+		    	'fixed'			=> __('Always Fixed', 'websidekick'),
+		    ),
+		    'default' => 'scroll',
+		'classes' => array( 'col-12', 'col-md-6'),
+		) );
+
+		$menu_options->add_field( array(
+			'name'	=> __( 'Home Page Transparent Menu', 'websidekick' ),
+			'desc'	=> __( 'Default - "off" Turning this option on makes the main menu on large devices be transparent, on top of Hero Images, until scrolled. Then it is fixed to the top of the page and menu color options below take effect.', 'websidekick' ),
+			'id'   => 'home_menu_trans',
+			'type' => 'sidekick_switch_toggle',
+			'color_unselected'	=> 'text-gray-lighten-7',
+		    'color_selected'	=> 'text-gray-lighten-7',
+		    'bg_unselected'		=> 'bg-gray-lighten-4',
+		    'bg_selected'		=> 'bg-green-lighten-2',
+			'classes' => array( 'col-12', 'col-md-6'),
+		) );
+
+		$menu_options->add_field( array(
 			'name'    => __( 'Colors', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'css_title',
