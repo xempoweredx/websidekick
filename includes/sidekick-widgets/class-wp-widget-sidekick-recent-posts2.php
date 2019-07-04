@@ -23,6 +23,12 @@ class WP_widget_sidekick_recent_posts22 extends WP_Widget {
     function widget($args, $instance) {
         $cache = wp_cache_get('widget_sidekick_recent_posts2', 'widget');
 
+        if ( array_key_exists( 'post_type', $instance ) ) {
+			$this_post_type = $instance['post_type']; // Taxonomy to show
+		} else {
+			$this_post_type = '';
+		}
+
         if ( !is_array($cache) )
             $cache = array();
 
@@ -42,22 +48,16 @@ class WP_widget_sidekick_recent_posts22 extends WP_Widget {
         else if ( $number > 15 )
             $number = 15;
 
-        echo '<select>';
+        echo '<div class="form-group"><label for="exampleFormControlSelect1">Example select</label><select class="form-control" id="exampleFormControlSelect1">';
 
         $all_cpts = get_post_types();
         foreach( $all_cpts as $cpt_object ) :
 
-        echo '<option' . ' class="' . esc_attr( $class_name ) . '" value="' . esc_attr( $cpt_object ) . '">' . esc_html( $cpt_object ) . '</option>';
+        echo '<option>" value="' . esc_attr( $cpt_object ) . '">' . esc_html( $cpt_object ) . '</option>';
 
         wp_reset_postdata(); endforeach;
 
-        echo '</select>';
-
-        if ( array_key_exists( 'post_type', $instance ) ) {
-			$this_post_type = $instance['post_type']; // Taxonomy to show
-		} else {
-			$this_post_type = '';
-		}
+        echo '</select></div>';
 
 		$cpt = $this_post_type;
 
