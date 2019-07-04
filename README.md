@@ -11,10 +11,6 @@
 
 Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extra functionality and flexability.
 
-## Heads Up
-
-I use the "Master" branch as my development branch, so to get the latest stable version check out the "Releases" tab and download the latest compiled .zip. Feel free to clone, fork, or pull request if you find a problem/have a fix. Thanks!
-
 ## Description
 
 This plugin enqueues Bootstrap 4.x.x, FontAwesome 5.x.x, and replace WP default jQuery version with jquery.min 3.3.1 for use in the WP admin area. Easily edit/upgrade versions & CDN links via WP Admin Dashboard settings. It uses CMB2 for easy custom metabox creation (including a few custom fields such as text imputs with icons, BS4 selects, toggles, switches, and more). 
