@@ -620,6 +620,7 @@ class CMB2_Field extends CMB2_Base {
 		return in_array( $this->type(), array(
 			'file_list',
 			'multicheck',
+			'sidekick_multicheck',
 			'text_datetime_timestamp_timezone',
 		) );
 	}
@@ -648,6 +649,9 @@ class CMB2_Field extends CMB2_Base {
 			'taxonomy_multicheck'              => 1,
 			'taxonomy_multicheck_inline'       => 1,
 			'taxonomy_multicheck_hierarchical' => 1,
+			'sidekick_file'					   => 1,
+			'sidekick_radio'				   => 1,
+			'sidekick_checkbox'                => 1,
 
 		);
 
@@ -693,6 +697,8 @@ class CMB2_Field extends CMB2_Base {
 			'taxonomy_radio',
 			'taxonomy_radio_inline',
 			'taxonomy_radio_hierarchical',
+			'sidekick_select',
+			'sidekick_radio',
 		), $this ) );
 
 		if ( isset( $all_or_nothing_types[ $type ] ) ) {
@@ -873,6 +879,33 @@ class CMB2_Field extends CMB2_Base {
 	 */
 	public function render_field_callback() {
 
+	/*************************************************************************************************
+		* Begin Custom Row Render  @CG
+	*************************************************************************************************/
+
+		$sidekick_type 	= $this->args( 'type' );
+
+		/* TEXT FIELD OPTIONS */
+		$icon_block		= $this->args( 'icon_block' );  // options: 'left', 'right'
+		$icon			= $this->args( 'fa_icon' );  // full fontawesome markup: 'fal fa-truck'
+		$icon_color		= $this->args( 'icon_color' );  // Use BS4 "color-palette" full class 'text-dark-lighten-2'
+		$icon_bg		= $this->args( 'icon_bg' );  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+		$icon_border	= $this->args( 'icon_border' );  // Default is 'yes' or true. Option: 'no'.
+
+		/* CHECKBOX & RADIO FIELD OPTIONS */
+		$color_unselected	= $this->args( 'color_unselected' );  // Use BS4 "color-palette" full class 'text-green-lighten-2'
+		$bg_unselected		= $this->args( 'bg_unselected' );  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+		$color_selected		= $this->args( 'color_selected' );  // Use BS4 "color-palette" full class 'text-green-lighten-2'
+		$bg_selected		= $this->args( 'bg_selected' );  // Use BS4 "color-palette" full class 'bg-green-lighten-2'
+		$icon_unselected	= $this->args( 'icon_unselected' );  // full fontawesome markup: 'fal fa-truck'
+		$icon_selected		= $this->args( 'icon_selected' );  // full fontawesome markup: 'fal fa-truck'
+		$size_unselected	= $this->args( 'size_unselected' );  // full fontawesome markup: 'fa-sm' *optional*
+		$size_selected		= $this->args( 'size_selected' );  // full fontawesome markup: 'fa-lg' *optional*
+
+		$field_desc		= $this->args( 'desc' );
+
+
+
 		// If field is requesting to not be shown on the front-end.
 		if ( ! is_admin() && ! $this->args( 'on_front' ) ) {
 			return;
@@ -903,30 +936,142 @@ class CMB2_Field extends CMB2_Base {
 
 		$this->peform_param_callback( 'before_row' );
 
-		printf( "<div class=\"cmb-row %s\" data-fieldtype=\"%s\">\n", $this->row_classes(), $field_type );
 
-		if ( ! $this->args( 'show_names' ) ) {
-			echo "\n\t<div class=\"cmb-td\">\n";
+		/*** Checkbox & Multi-Based input fields ***/
 
-			$this->peform_param_callback( 'label_cb' );
+		if ( ( $sidekick_type =='sidekick_checkbox' ) || ( $sidekick_type =='sidekick_switch_toggle' ) || ( $sidekick_type =='sidekick_switch_slide' ) || ( $sidekick_type =='sidekick_checkbox_icon' ) || ( $sidekick_type =='sidekick_switch_buttons' ) ) { 
 
-		} else {
+			printf( "<div class=\"form-group %s\" data-fieldtype=\"%s\">\n", $this->row_classes(), $this->type() );
 
-			if ( $this->get_param_callback_result( 'label_cb' ) ) {
-				echo '<div class="cmb-th">', $this->peform_param_callback( 'label_cb' ), '</div>';
+			if ( $sidekick_type =='sidekick_switch_toggle' ) { 
+				echo '<div class="custom-control custom-switch sidekick-switch-toggle options-' . $bg_unselected . ' selection-' . $bg_selected . ' options-' . $color_unselected . ' selection-' . $color_selected . '">';
+			}
+			elseif ( $sidekick_type =='sidekick_switch_slide' ) { 
+				echo '<div class="custom-control custom-switch sidekick-switch-slide options-' . $bg_unselected . ' selection-' . $bg_selected . ' options-' . $color_unselected . ' selection-' . $color_selected . '">';
+			}
+			elseif ( $sidekick_type =='sidekick_switch_buttons' ) { 
+				echo '';
+			}
+			else {
+				echo '<div class="custom-control custom-checkbox">';
 			}
 
-			echo "\n\t<div class=\"cmb-td\">\n";
+			$this->peform_param_callback( 'before' );
+			// Render checkbox input
+				$types = new CMB2_Types( $this );
+				$types->render();
+			$this->peform_param_callback( 'after' );
+			if ( ! $this->args( 'show_names' ) ) {
+				$this->peform_param_callback( 'label_cb' );
+			} 
+			else {
+				if ( $this->get_param_callback_result( 'label_cb' ) ) {
+					echo $this->peform_param_callback( 'label_cb' );
+				}
+			}
+
+			if ( $field_desc ) { echo '<div class="small mt-2">' . $field_desc . '</div>'; }
+
+			if ( $sidekick_type =='sidekick_switch_buttons' ) { 
+				echo '</div>';
+			}
+			else echo '</div></div>'; // Close custom-checkbox div. 18-10-03 @CG
+		}
+		
+
+		// Text-based input fields
+		elseif ( ( $sidekick_type =='sidekick_text' ) || ( $sidekick_type =='sidekick_tel' ) || ( $sidekick_type =='sidekick_email' ) || ( $sidekick_type =='sidekick_url' ) || ( $sidekick_type =='sidekick_password' ) || ( $sidekick_type =='sidekick_textarea' ) || ( $sidekick_type =='sidekick_range' ) || ( $sidekick_type =='sidekick_radio_buttons' ) || ( $sidekick_type =='sidekick_radio_icons' ) || ( $sidekick_type =='sidekick_select' ) || ( $sidekick_type =='sidekick_taxonomy_select' ) || ( $sidekick_type =='colorpicker' ) || ( $sidekick_type =='sidekick_radio' ) || ( $sidekick_type =='sidekick_file' ) || ( $sidekick_type =='sidekick_text_time' ) || ( $sidekick_type =='sidekick_text_date' ) || ( $sidekick_type =='sidekick_text_date_timestamp' ) || ( $sidekick_type =='sidekick_text_datetime_timestamp' ) || ( $sidekick_type =='sidekick_text_datetime_timestamp_timezone' ) || ( $sidekick_type =='term_select' ) ) {
+			
+			printf( "<div class=\"form-group %s\" data-fieldtype=\"%s\">\n", $this->row_classes(), $this->type() );
+
+			if ( ! $this->args( 'show_names' ) ) {
+
+				$this->peform_param_callback( 'label_cb' );
+
+			} 
+			else {
+
+				if ( $this->get_param_callback_result( 'label_cb' ) ) {
+						echo $this->peform_param_callback( 'label_cb' );
+				}
+
+			}
+
+			// BS4 Input Block Icon. 18-03-21 @CG   https://getbootstrap.com/docs/4.1/components/input-group/
+			if ( !empty( $icon_block ) ) { ?>
+
+				<div class="input-group<?php if($icon_border == 'no') { echo ' no-icon-border'; } if ( $icon_block ) { echo ' icon-pos-' . $icon_block; } ?>">
+
+					<?php if ( $icon_block == 'left' ) { ?>
+					<div class="input-group-prepend">
+	  					<span class="d-flex justify-content-center px-0 input-group-text<?php if($icon_color) { echo ' ' . $icon_color; } if($icon_bg) { echo ' ' . $icon_bg; } ?>" style="width:45px;">
+	  						<i class="<?php echo $icon; ?>"></i>
+	  					</span>
+					</div>
+	    		<?php }
+			}
+
+			$this->peform_param_callback( 'before' );
+
+			$types = new CMB2_Types( $this );
+			$types->render();
+
+			// BS4 Input Block Icon. 18-03-21 @CG   https://getbootstrap.com/docs/4.1/components/input-group/
+			if ( !empty( $icon_block ) ) {
+				if ( $icon_block == 'right' ) { ?>
+					<div class="input-group-append">
+						<span class="d-flex justify-content-center px-0 input-group-text<?php if($icon_color) { echo ' ' . $icon_color; } if($icon_bg) { echo ' ' . $icon_bg; } ?>" style="width:45px;">
+							<i class="<?php echo $icon; ?>"></i>
+						</span>
+					</div>
+				<?php } ?>
+
+				</div><!-- END .input-group -->
+
+			<?php }
+
+			if ( !empty( $field_desc ) ) {
+				echo '<small class="form-text text-muted">' . $field_desc . '</small>';
+			}
+
+			$this->peform_param_callback( 'after' );
+
+			echo "\n\t</div>\n";
+
 		}
 
-		$this->peform_param_callback( 'before' );
+		/******************************************************
+		* Back to Standard CMB2 Row Render  @CG
+		******************************************************/
+		else {
 
-		$types = new CMB2_Types( $this );
-		$types->render();
 
-		$this->peform_param_callback( 'after' );
+			printf( "<div class=\"cmb-row %s\" data-fieldtype=\"%s\">\n", $this->row_classes(), $field_type );
 
-		echo "\n\t</div>\n</div>";
+			if ( ! $this->args( 'show_names' ) ) {
+				echo "\n\t<div class=\"cmb-td\">\n";
+
+				$this->peform_param_callback( 'label_cb' );
+
+			} else {
+
+				if ( $this->get_param_callback_result( 'label_cb' ) ) {
+					echo '<div class="cmb-th">', $this->peform_param_callback( 'label_cb' ), '</div>';
+				}
+
+				echo "\n\t<div class=\"cmb-td\">\n";
+			}
+
+			$this->peform_param_callback( 'before' );
+
+			$types = new CMB2_Types( $this );
+			$types->render();
+
+			$this->peform_param_callback( 'after' );
+
+			echo "\n\t</div>\n</div>";
+
+		} // END else (standard row rendering)
 
 		$this->peform_param_callback( 'after_row' );
 
@@ -954,16 +1099,56 @@ class CMB2_Field extends CMB2_Base {
 	 * The default label_cb callback (if not a title field)
 	 *
 	 * @since  2.1.1
-	 * @return string Label html markup.
+	 * @return string Label html markup
 	 */
 	public function label() {
+
+		$sidekick_type = $this->args( 'type' );
+
+		/* CHECKBOX & RADIO FIELD OPTIONS */
+		$color_unselected	= $this->args( 'color_unselected' );  // Use BS4 "color-palette" full class 'text-green-lighten-2'
+		$bg_unselected		= $this->args( 'bg_unselected' );  // Use BS4 "color-palette" full class 'bg-dark-lighten-4'
+		$color_selected		= $this->args( 'color_selected' );  // Use BS4 "color-palette" full class 'text-green-lighten-2'
+		$bg_selected		= $this->args( 'bg_selected' );  // Use BS4 "color-palette" full class 'bg-green-lighten-2'
+		$icon_unselected	= $this->args( 'icon_unselected' );  // full fontawesome markup: 'fal fa-truck'
+		$icon_selected		= $this->args( 'icon_selected' );  // full fontawesome markup: 'fal fa-truck'
+		$size_unselected	= $this->args( 'size_unselected' );  // full fontawesome markup: 'fa-sm' *optional*
+		$size_selected		= $this->args( 'size_selected' );  // full fontawesome markup: 'fa-lg' *optional*
+		$btn_align 			= $this->args( 'btn_align' );
+
 		if ( ! $this->args( 'name' ) ) {
 			return '';
 		}
 
 		$style = ! $this->args( 'show_names' ) ? ' style="display:none;"' : '';
 
-		return sprintf( "\n" . '<label%1$s for="%2$s">%3$s</label>' . "\n", $style, $this->id(), $this->args( 'name' ) );
+		if ( ( $sidekick_type=='sidekick_checkbox' ) || ( $sidekick_type=='sidekick_switch_toggle' ) || ( $sidekick_type=='sidekick_switch_slide' ) ) {
+			$sidekick_checkbox = ' class="custom-control-label" ';
+
+			return sprintf( "\n" . '<label%1$s %4$s for="%2$s">%3$s</label>' . "\n", $style, $this->id(), $this->args( 'name' ), $sidekick_checkbox );
+		}
+
+		if ( $sidekick_type=='sidekick_checkbox_icon' ) {
+			$sidekick_checkbox = ' class="custom-control-label" ';
+			$icon_check = '<span class="check-off ' . $color_unselected . '">
+		    		<i class="' . $icon_unselected . ' ' . $size_unselected . '"></i>
+		    	</span>
+		    	<span class="check-on ' . $color_selected . '">
+		    		<i class="' . $icon_selected . ' ' . $size_selected . '"></i>
+		    	</span>';
+
+		    	return sprintf( "\n" . '<label%1$s %4$s for="%2$s">%3$s %5$s</label>' . "\n", $style, $this->id(), $this->args( 'name' ), $sidekick_checkbox, $icon_check );
+	    }
+
+	    if ( ( $sidekick_type=='sidekick_radio_buttons' ) || ( $sidekick_type=='sidekick_file' ) ) {
+			$d_block = ' class="d-block" ';
+
+			return sprintf( "\n" . '<label%1$s %4$s for="%2$s">%3$s</label>' . "\n", $style, $this->id(), $this->args( 'name' ), $d_block );
+		}
+
+		else { 
+			return sprintf( "\n" . '<label%1$s for="%2$s">%3$s</label>' . "\n", $style, $this->id(), $this->args( 'name' ) );
+		}
 	}
 
 	/**
@@ -986,6 +1171,8 @@ class CMB2_Field extends CMB2_Base {
 		$repeat_table_rows_types = apply_filters( 'cmb2_repeat_table_row_types', array(
 			'text_url',
 			'text',
+			'sidekick_text',
+			'sidekick_url',
 		) );
 
 		$conditional_classes = array(
@@ -1381,6 +1568,7 @@ class CMB2_Field extends CMB2_Base {
 			array(
 				// CMB2_Sanitize::_save_file_id_value()/CMB2_Sanitize::_get_group_file_value_array().
 				'file',
+				'sidekick_file',
 				// See CMB2_Sanitize::_save_utc_value().
 				'text_datetime_timestamp_timezone',
 			),
@@ -1507,7 +1695,7 @@ class CMB2_Field extends CMB2_Base {
 			'date_format'       => 'm\/d\/Y',
 			'time_format'       => 'h:i A',
 			'description'       => isset( $args['desc'] ) ? $args['desc'] : '',
-			'preview_size'      => 'file' === $type ? array( 350, 350 ) : array( 50, 50 ),
+			'preview_size'      => 'file' === $type || 'sidekick_file' === $type ? array( 350, 350 ) : array( 50, 50 ),
 			'render_row_cb'     => array( $this, 'render_field_callback' ),
 			'display_cb'        => array( $this, 'display_value_callback' ),
 			'label_cb'          => 'title' !== $type ? array( $this, 'label' ) : '',

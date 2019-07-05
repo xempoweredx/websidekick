@@ -427,12 +427,12 @@ class CMB2_Types {
 
 		$desc = $this->field->args( 'description' );
 
-		if ( ! $desc ) {
+		if ( ! $desc || $this->field->args( 'icon_block' )) {
 			return;
 		}
 
-		$tag = $paragraph ? 'p' : 'span';
-		$desc = sprintf( "\n" . '<%1$s class="cmb2-metabox-description">%2$s</%1$s>' . "\n", $tag, $desc );
+		$tag = $paragraph ? 'p' : 'small';
+		$desc = sprintf( "\n" . '<%1$s class="form-text text-muted">%2$s</%1$s>' . "\n", $tag, $desc );
 
 		if ( $echo ) {
 			echo $desc;
@@ -657,6 +657,149 @@ class CMB2_Types {
 
 	public function file( $args = array() ) {
 		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_File', $args )->render();
+	}
+
+	/***************************************
+	* Begin Custom Field Types  @CG
+	***************************************/
+
+	public function sidekick_text() {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
+			'class' => 'form-control',
+		), 	'input' )->render();
+	}
+
+	public function sidekick_url() {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
+			'type'  => 'url',
+			'class' => 'form-control',
+			'value' => $this->field->escaped_value( 'esc_url' ),
+		),  'input' )->render();
+	}
+
+	public function sidekick_tel() {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
+			'type'  => 'tel',
+			'class' => 'form-control',
+			'desc'  => $this->_desc(),
+		),  'input' )->render();
+	}
+
+	public function sidekick_email() {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
+			'type'  => 'email',
+			'class' => 'form-control',
+			'desc'  => $this->_desc(),
+		), 	'input' )->render();
+	}
+
+	public function sidekick_password() {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
+			'type'  => 'password',
+			'class' => 'form-control',
+			'desc'  => $this->_desc(),
+		), 	'input' )->render();
+	}
+
+	public function sidekick_textarea( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Textarea', $args )->render();
+	}
+
+	public function sidekick_range() {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Range', array(
+			'desc'  => $this->_desc(),
+		), 	'input' )->render();
+	}
+
+	public function sidekick_checkbox( $args = array(), $is_checked = null ) {
+		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
+		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
+		$this->type = new $render_class_name( $this, $args, $is_checked );
+		return $this->type->render();
+	}
+
+	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
+	public function sidekick_checkbox_icon( $args = array(), $is_checked = null ) {
+		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
+		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
+		$this->type = new $render_class_name( $this, $args, $is_checked );
+		return $this->type->render();
+	}
+
+	public function sidekick_multicheck( $type = 'checkbox' ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Multicheck', array(), $type )->render();
+	}
+
+	public function sidekick_radio( $args = array(), $type = __FUNCTION__ ) {
+		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio', $args, $type )->render();
+	}
+
+	// Added CMB2_Type_Sidekick_Radio_Buttons.php AND modified CMB2_Type_Multi_Base.php - 18-10-03 @CG
+	public function sidekick_radio_buttons( $args = array(), $type = __FUNCTION__ ) {
+		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio_Buttons', $args, $type )->render();
+	}
+
+	// Added CMB2_Type_Sidekick_Radio_Icons.php AND modified CMB2_Type_Multi_Base.php - 18-10-03 @CG
+	public function sidekick_radio_icons( $args = array(), $type = __FUNCTION__ ) {
+		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio_Icons', $args, $type )->render();
+	}
+
+	public function sidekick_select( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Select', $args )->render();
+	}
+
+	public function sidekick_taxonomy_select( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Taxonomy_Select', $args )->render();
+	}
+
+	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
+	public function sidekick_switch_toggle( $args = array(), $is_checked = null ) {
+		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
+		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
+		$this->type = new $render_class_name( $this, $args, $is_checked );
+		return $this->type->render();
+	}
+
+	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
+	public function sidekick_switch_slide( $args = array(), $is_checked = null ) {
+		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
+		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
+		$this->type = new $render_class_name( $this, $args, $is_checked );
+		return $this->type->render();
+	}
+
+	// Using "sidekick_switch_buttons" as "type" adds specific css and js functions to the standard "radio_buttons" type. Limit "options" to 2! ONLY use BS4 markup "btn-outline-..." for "btn_color". Be sure to set "default" for one of the options. - 18-03-28 @CG
+	public function sidekick_switch_buttons( $args = array(), $type = __FUNCTION__ ) {
+		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio_Buttons', $args, $type )->render();
+	}
+
+	public function sidekick_file( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_File', $args )->render();
+	}
+
+	public function sidekick_text_date( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Date', $args )->render();
+	}
+
+	// Alias for text_date
+	public function sidekick_text_date_timestamp( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Date', $args )->render();
+	}
+
+	public function sidekick_text_time( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Time', $args )->render();
+	}
+
+	public function sidekick_text_datetime_timestamp( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Datetime_Timestamp', $args )->render();
+	}
+
+	public function sidekick_text_datetime_timestamp_timezone( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Datetime_Timestamp_Timezone', $args )->render();
+	}
+
+	public function sidekick_select_timezone( $args = array() ) {
+		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Select_Timezone', $args )->render();
 	}
 
 }

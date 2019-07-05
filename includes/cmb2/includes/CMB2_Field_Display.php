@@ -51,6 +51,7 @@ class CMB2_Field_Display {
 				break;
 			case 'wysiwyg':
 			case 'textarea_small':
+			case 'sidekick_textarea':
 				$type = new CMB2_Display_Textarea( $field );
 				break;
 			case 'textarea_code':
@@ -74,12 +75,14 @@ class CMB2_Field_Display {
 				break;
 			case 'multicheck':
 			case 'multicheck_inline':
+			case 'sidekick_multicheck':
 				$type = new CMB2_Display_Multicheck( $field );
 				break;
 			case 'taxonomy_radio':
 			case 'taxonomy_radio_inline':
 			case 'taxonomy_select':
 			case 'taxonomy_radio_hierarchical':
+			case 'sidekick_taxonomy_select':
 				$type = new CMB2_Display_Taxonomy_Radio( $field );
 				break;
 			case 'taxonomy_multicheck':
@@ -88,6 +91,7 @@ class CMB2_Field_Display {
 				$type = new CMB2_Display_Taxonomy_Multicheck( $field );
 				break;
 			case 'file':
+			case 'sidekick_file':
 				$type = new CMB2_Display_File( $field );
 				break;
 			case 'file_list':
@@ -408,6 +412,61 @@ class CMB2_Display_File extends CMB2_Field_Display {
 
 	protected function file_output( $url_value, $id, CMB2_Type_File_Base $field_type ) {
 		// If there is no ID saved yet, try to get it from the url.
+		if ( $url_value && ! $id ) {
+			$id = CMB2_Utils::image_id_from_url( esc_url_raw( $url_value ) );
+		}
+
+		if ( $field_type->is_valid_img_ext( $url_value ) ) {
+			$img_size = $this->field->args( 'preview_size' );
+
+			if ( $id ) {
+				$image = wp_get_attachment_image( $id, $img_size, null, array(
+					'class' => 'cmb-image-display',
+				) );
+			} else {
+				$size = is_array( $img_size ) ? $img_size[0] : 200;
+				$image = '<img class="cmb-image-display" style="max-width: ' . absint( $size ) . 'px; width: 100%; height: auto;" src="' . $url_value . '" alt="" />';
+			}
+
+			echo $image;
+
+		} else {
+
+			printf( '<div class="file-status"><span>%1$s <strong><a href="%2$s">%3$s</a></strong></span></div>',
+				esc_html( $field_type->_text( 'file_text', esc_html__( 'File:', 'cmb2' ) ) ),
+				$url_value,
+				CMB2_Utils::get_file_name_from_path( $url_value )
+			);
+
+		}
+	}
+}
+
+class CMB2_Display_Sidekick_File extends CMB2_Field_Display {
+	/**
+	 * Display file value.
+	 *
+	 * @since 2.2.2
+	 */
+	protected function _display() {
+		if ( empty( $this->value ) ) {
+			return;
+		}
+
+		$this->value = esc_url_raw( $this->value );
+
+		$types = new CMB2_Types( $this->field );
+		$type  = $types->get_new_render_type( $this->field->type(), 'CMB2_Type_File_Base' );
+
+		$id = $this->field->get_field_clone( array(
+			'id' => $this->field->_id() . '_id',
+		) )->escaped_value( 'absint' );
+
+		$this->file_output( $this->value, $id, $type );
+	}
+
+	protected function file_output( $url_value, $id, CMB2_Type_File_Base $field_type ) {
+		// If there is no ID saved yet, try to get it from the url
 		if ( $url_value && ! $id ) {
 			$id = CMB2_Utils::image_id_from_url( esc_url_raw( $url_value ) );
 		}

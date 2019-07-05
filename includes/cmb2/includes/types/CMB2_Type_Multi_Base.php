@@ -45,6 +45,116 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 	}
 
 	/**
+	 * Sidekick Generates html for sidekick_list_item with input  @CG
+	 *
+	 * @since  1.1.0
+	 * @param  array $args Override arguments
+	 * @param  int   $i    Iterator value
+	 * @return string       Gnerated list item html
+	 */
+	public function sidekick_list_input( $args = array(), $i ) {
+
+		$list_type = $this->field->args( 'type' );
+
+		if ( ( $list_type=='sidekick_radio' ) ) {
+			$lt = 'custom-radio ';
+		}
+		elseif ( ( $list_type=='sidekick_multicheck' ) ) {
+			$lt = 'custom-checkbox ';
+		}
+		else {
+			$lt = '';
+		}
+
+		$list_display = $this->field->args( 'list_display' );
+
+		if ( ( $list_display=='inline' ) ) {
+			$ld = 'custom-control-inline ';
+		}
+		else {
+			$ld = '';
+		}
+
+		$a = $this->parse_args( 'sidekick_list_input', array(
+			'type'  => 'radio',
+			'class' => 'custom-control-input cmb2-option',
+			'name'  => $this->_name(),
+			'id'    => $this->_id( $i ),
+			'value' => $this->field->escaped_value(),
+			'label' => '',
+		), $args );
+
+		return sprintf( "\t" . '<li class="custom-control ' . $lt . $ld . '"><input%s/> <label class="custom-control-label" for="%s">%s</label></li>' . "\n", $this->concat_attrs( $a, array( 'label' ) ), $a['id'], $a['label'] );
+	}
+
+
+	/**
+	 * SIDEKICK Generates html for sidekick_radio_buttons input   18-10-03 @CG
+	 *
+	 * @since  1.1.0
+	 * @param  array $args Override arguments
+	 * @param  int   $i    Iterator value
+	 * @return string       Gnerated list item html
+	 */
+	public function sidekick_radio_buttons( $args = array(), $i ) {
+
+		$btn_color = $this->field->args( 'btn_color' );
+
+		$a = $this->parse_args( 'list_input', array(
+			'type'  => 'radio',
+			'class' => 'custom-radio-buttons',  
+			'name'  => $this->_name(),
+			'id'    => $this->_id( $i ),
+			'value' => $this->field->escaped_value(),
+			'label' => '',
+		), $args );
+
+		return sprintf( "\t" . '<label class="btn shadow-none %1$s" for="%2$s"><input%3$s autocomplete="off"/>%4$s</label>' . "\n", $btn_color, $a['id'], $this->concat_attrs( $a, array( 'label' ) ), $a['label'] );
+
+	}
+
+
+	/**
+	 * SIDEKICK Generates html for radio icons input   18-10-03 @CG
+	 *
+	 * @since  1.1.0
+	 * @param  array $args Override arguments
+	 * @param  int   $i    Iterator value
+	 * @return string       Gnerated list item html
+	 */
+	public function sidekick_radio_icons( $args = array(), $i ) {
+
+		$display_class		= $this->field->args( 'display_class' );  // Use BS4 display markup "d-block" or "d-inline-block"
+		$icon_unselected	= $this->field->args( 'icon_unselected' );  // full fontawesome markup: 'fal fa-truck'
+		$icon_selected		= $this->field->args( 'icon_selected' );  // full fontawesome markup: 'fal fa-truck'
+		$color_unselected	= $this->field->args( 'color_unselected' );  // Use BS4 "color-palette" full class 'text-green-lighten-2'
+		$color_selected		= $this->field->args( 'color_selected' );  // Use BS4 "color-palette" full class 'text-green-lighten-2'
+		$size_unselected	= $this->field->args( 'size_unselected' );  // full fontawesome markup: 'fa-sm' *optional*
+		$size_selected		= $this->field->args( 'size_selected' );  // full fontawesome markup: 'fa-lg' *optional*
+
+		$a = $this->parse_args( 'list_input', array(
+			'type'  => 'radio',
+			'class' => 'custom-control-input',  
+			'name'  => $this->_name(),
+			'id'    => $this->_id( $i ),
+			'value' => $this->field->escaped_value(),
+			'label' => '',
+		), $args );
+
+		return sprintf( "\t" . '<div class="custom-control custom-radio mr-2 mb-2 %10$s"><input%7$s />
+			<label class="custom-control-label" for="%8$s">
+				<span class="radio-option %1$s">
+                    <i class="fa-fw %2$s %3$s"></i>
+                </span>
+                <span class="radio-selected %4$s">
+                    <i class="fa-fw %5$s %6$s"></i>
+                </span>
+                <div>%9$s</div>
+            </label></div>' . "\n", $color_unselected, $icon_unselected, $size_unselected, $color_selected, $icon_selected, $size_selected, $this->concat_attrs( $a, array( 'label' ) ), $a['id'], $a['label'], $display_class );
+
+	}
+
+	/**
 	 * Generates html for list item with checkbox input
 	 *
 	 * @since  1.1.0
@@ -59,6 +169,23 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 		}
 		$args['type'] = 'checkbox';
 		return $this->list_input( $args, $i );
+	}
+
+	/**
+	 * SIDEKICK Generates html for sidekick_list item with checkbox input
+	 *
+	 * @since  1.1.0
+	 * @param  array $args Override arguments
+	 * @param  int   $i    Iterator value
+	 * @return string       Gnerated list item html
+	 */
+	public function sidekick_list_input_checkbox( $args, $i ) {
+		$saved_value = $this->field->escaped_value();
+		if ( is_array( $saved_value ) && in_array( $args['value'], $saved_value ) ) {
+			$args['checked'] = 'checked';
+		}
+		$args['type'] = 'checkbox';
+		return $this->sidekick_list_input( $args, $i );
 	}
 
 	/**
