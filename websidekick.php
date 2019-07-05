@@ -77,22 +77,21 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/widget-shortcode/init.php';
 /**
  * Get the AddToAny file!
  */
-// https://wordpress.org/plugins/widget-shortcode/
-if (get_option('websidekick_main_options')['a2a'] ) {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
+if( isset($options['a2a'])){
+   require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
 }
 
 /**
  * Get the Maintenance Mode init file if enables in Main Settings tab!
  */
-if (get_option('websidekick_main_options')['maintenance'] ) {
+if( isset($options['maintenance'])){
 	require_once plugin_dir_path( __FILE__ ) . 'includes/wp-maintenance-mode/wp-maintenance-mode.php';
 }
 
 /**
  * Get the Maintenance Mode init file if enables in Main Settings tab!
  */
-if (get_option('websidekick_main_options')['blb_tagger'] ) {
+if( isset($options['blb_tagger'])){
 	require_once plugin_dir_path( __FILE__ ) . 'includes/BLB_ScriptTagger/BLB_ScriptTagger.php';
 }
 
