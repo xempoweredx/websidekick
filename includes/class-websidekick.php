@@ -122,11 +122,6 @@ class Websidekick {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-websidekick-public.php';
 
-		/**
-		 * The class responsible for defining custom posts widgets
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/sidekick-widgets/class-custom-post-type-widgets.php';
-
 		$this->loader = new Websidekick_Loader();
 
 	}

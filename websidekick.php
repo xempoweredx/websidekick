@@ -11,7 +11,7 @@
  * Plugin Name:       Web Sidekick
  * Plugin URI:        https://github.com/xempoweredx/websidekick
  * Description:       Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extra functionality and flexability.
- * Version:           1.1.5
+ * Version:           1.1.6 BETA
  * Author:            Chad Gray
  * Author URI:        https://github.com/xempoweredx
  * License:           GPL-2.0+
@@ -28,72 +28,53 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'WEBSIDEKICK_VERSION', '1.1.5' );
+define( 'WEBSIDEKICK_VERSION', '1.1.6 BETA' );
 
 require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/xempoweredx/websidekick/',
-	__FILE__,
-	'websidekick'
-);
-if ( is_multisite() ) {
-	$options = get_site_option('websidekick_main_options');
-}
-else {
-	$options = get_option('websidekick_main_options');
-}
+	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( 'https://github.com/xempoweredx/websidekick/', __FILE__, 'websidekick' );
 
-/**
- * Get the CMB2 bootstrap file!
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2/init.php';
+if ( is_multisite() ) { $options = get_site_option('websidekick_main_options'); }
+else { $options = get_option('websidekick_main_options'); }
 
-/**
- * Get the CMB2 Taxonomy file!
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-taxonomy/plugin.php';
+/* INITIATE THIRD PARTY & CUSTOM PLUGINS */
 
-/**
- * Get the CMB2 Conditionals file!
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-conditionals/cmb2-conditionals.php';
+	/* Get the CMB2 bootstrap file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2/init.php';
 
-/**
- * Get the CMB2 Term Select file!
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-term-select/cmb2-term-select.php';
+	/* Get the CMB2 Taxonomy file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-taxonomy/plugin.php';
 
-/**
- * Get the List Taxonomy Widget file!
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/list-taxonomy-widget/list-taxonomy-widget.php';
+	/* Get the CMB2 Conditionals file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-conditionals/cmb2-conditionals.php';
 
-/**
- * Get the Widget Shortcode Generator file!
- */
-// https://wordpress.org/plugins/widget-shortcode/
-require_once plugin_dir_path( __FILE__ ) . 'includes/widget-shortcode/init.php';
+	/* Get the CMB2 Term Select file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-term-select/cmb2-term-select.php';
 
-/**
- * Get the AddToAny file!
- */
-if( isset($options['a2a'])){
-   require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
-}
+	/* Get the List Taxonomy Widget file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/list-taxonomy-widget/list-taxonomy-widget.php';
 
-/**
- * Get the Maintenance Mode init file if enables in Main Settings tab!
- */
-if( isset($options['maintenance'])){
-	require_once plugin_dir_path( __FILE__ ) . 'includes/wp-maintenance-mode/wp-maintenance-mode.php';
-}
+	/* Get the Sidekick Widgets file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/sidekick-widgets/class-custom-post-type-widgets.php';
 
-/**
- * Get the Maintenance Mode init file if enables in Main Settings tab!
- */
-if( isset($options['blb_tagger'])){
-	require_once plugin_dir_path( __FILE__ ) . 'includes/BLB_ScriptTagger/BLB_ScriptTagger.php';
-}
+	/* Get the Widget Shortcode Generator file! // https://wordpress.org/plugins/widget-shortcode/ */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/widget-shortcode/init.php';
+
+	/* Get the AddToAny file! */
+	if( isset($options['a2a'])){
+	   require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
+	}
+
+	/* Get the Maintenance Mode init file if enables in Main Settings tab! */
+	if( isset($options['maintenance'])){
+		require_once plugin_dir_path( __FILE__ ) . 'includes/wp-maintenance-mode/wp-maintenance-mode.php';
+	}
+
+	/* Get the Maintenance Mode init file if enables in Main Settings tab! */
+	if( isset($options['blb_tagger'])){
+		require_once plugin_dir_path( __FILE__ ) . 'includes/BLB_ScriptTagger/BLB_ScriptTagger.php';
+	}
+
+/* END THIRD PARTY & CUSTOM PLUGINS */
 
 /**
  * The code that runs during plugin activation.

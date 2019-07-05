@@ -17,6 +17,7 @@ class Custom_Post_Type_Widgets {
 		include_once( 'widget-custom-post-type-recent-comments.php' );
 		include_once( 'widget-custom-post-type-tag-cloud.php' );
 		include_once( 'widget-custom-post-type-search.php' );
+		include_once( 'widget-blb-text-search.php' );
 	}
 
 	public function init() {
@@ -27,7 +28,7 @@ class Custom_Post_Type_Widgets {
 		register_widget( 'WP_Custom_Post_Type_Widgets_Calendar' );
 		register_widget( 'WP_Custom_Post_Type_Widgets_Recent_Comments' );
 		register_widget( 'WP_Custom_Post_Type_Widgets_Tag_Cloud' );
-		register_widget( 'WP_Custom_Post_Type_Widgets_Search' );
+		register_widget( 'WP_Custom_Post_Type_Widgets_BLB_Search' );
 	}
 
 	public function uninstall() {}
