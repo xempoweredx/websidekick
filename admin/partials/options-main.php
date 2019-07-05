@@ -127,19 +127,6 @@
 		) );
 
 		$main_options->add_field( array(
-			'name' => 'Enable',
-			'id'   => 'blb_search',
-			'type' => 'sidekick_switch_toggle',
-			'before' => '<div class="mb-2">BLB Text Search</div>',
-			'desc' => 'Select "Enable" and "Save Changes". BLB wil be displayed at the top of active sidebar.',
-			'color_unselected'		=> 'text-gray-lighten-7',
-		    'color_selected'	=> 'text-gray-lighten-7',
-		    'bg_unselected'		=> 'bg-gray-lighten-4',
-		    'bg_selected'		=> 'bg-green-lighten-2',
-			'classes' => array( 'col-12' ),
-		) );
-
-		$main_options->add_field( array(
 			//'name'    => __( 'Core Files Settings', 'websidekick' ),
 			//'desc'		=> __( 'Default - "off" Core files are ONLY loaded on post & taxonomy edit screens. Turning this option on would load all files globally and change the look of the WP Admin Dashboard.', 'websidekick' ),
 			'id'      => 'core_title',
