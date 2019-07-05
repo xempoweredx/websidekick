@@ -5,7 +5,7 @@
 **Tags**: admin<br/>
 **Requires at least**: 3.0.1<br/>
 **Tested up to**: 5.2.2<br/>
-**Stable tag**: 1.1.5<br/>
+**Stable tag**: 1.1.6 BETA<br/>
 **License**: GPLv2 or later<br/>
 **License** URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extr
 
 ## Heads Up
 
-I use the "Master" branch as my development branch, so to get the latest stable version check out the "Releases" tab and download the latest compiled .zip. Feel free to clone, fork, or pull request if you find a problem/have a fix. Thanks!
+Be sure to use the "Master" branch for the latest stable release.
 
 ## Description
 
