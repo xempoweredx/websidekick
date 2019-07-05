@@ -18,7 +18,7 @@ class WP_Custom_Post_Type_Widgets_BLB_Search extends WP_Widget {
 			'description'                 => __( 'BLB Scripture Search' ),
 			//'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'sidekick-blb-scripture-search', __( 'BLB Scripture Search' ), $widget_ops );
+		parent::__construct( 'sidekick-blb-scripture-search', __( 'Sidekick BLB Scripture Search' ), $widget_ops );
 		//$this->alt_option_name = 'sidekick_widget_blb_search';
 	}
 

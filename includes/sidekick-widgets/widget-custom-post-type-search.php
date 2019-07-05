@@ -10,7 +10,7 @@ class WP_Custom_Post_Type_Widgets_Search extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'widget_search', 'description' => __( 'A search form for your site.', 'custom-post-type-widgets' ) );
-		parent::__construct( 'custom-post-type-search', __( 'Search (Custom Post Type)', 'custom-post-type-widgets' ), $widget_ops );
+		parent::__construct( 'custom-post-type-search', __( 'Sidekick Search', 'custom-post-type-widgets' ), $widget_ops );
 		$this->alt_option_name = 'widget_custom_post_type_search';
 
 		if ( ! is_admin() ) {

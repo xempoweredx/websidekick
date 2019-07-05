@@ -10,7 +10,7 @@ class WP_Custom_Post_Type_Widgets_Categories extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'widget_categories', 'description' => __( 'A list or dropdown of categories.', 'custom-post-type-widgets' ) );
-		parent::__construct( 'custom-post-type-categories', __( 'Categories (Custom Post Type)', 'custom-post-type-widgets' ), $widget_ops );
+		parent::__construct( 'custom-post-type-categories', __( 'Sidekick Categories', 'custom-post-type-widgets' ), $widget_ops );
 	}
 
 	public function widget( $args, $instance ) {

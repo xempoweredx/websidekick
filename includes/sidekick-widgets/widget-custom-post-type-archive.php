@@ -10,7 +10,7 @@ class WP_Custom_Post_Type_Widgets_Archives extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'widget_archive', 'description' => __( 'A monthly archive of your site&#8217;s Posts.', 'custom-post-type-widgets' ) );
-		parent::__construct( 'custom-post-type-archives', __( 'Archives (Custom Post Type)', 'custom-post-type-widgets' ), $widget_ops );
+		parent::__construct( 'custom-post-type-archives', __( 'Sidekick Archives', 'custom-post-type-widgets' ), $widget_ops );
 	}
 
 	public function widget( $args, $instance ) {

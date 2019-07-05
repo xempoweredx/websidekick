@@ -20,7 +20,7 @@ class WP_Custom_Post_Type_Widgets_Calendar extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'widget_calendar', 'description' => __( 'A calendar of your site&#8217;s Posts.', 'custom-post-type-widgets' ) );
-		parent::__construct( 'custom-post-type-calendar', __( 'Calendar (Custom Post Type)', 'custom-post-type-widgets' ), $widget_ops );
+		parent::__construct( 'custom-post-type-calendar', __( 'Sidekick Posts Calendar', 'custom-post-type-widgets' ), $widget_ops );
 	}
 
 	public function widget( $args, $instance ) {

@@ -10,7 +10,7 @@ class WP_Custom_Post_Type_Widgets_Recent_Posts extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'widget_recent_entries', 'description' => __( 'Your site&#8217;s most recent custom Posts.', 'custom-post-type-widgets' ) );
-		parent::__construct( 'custom-post-type-recent-posts', __( 'Recent Posts (Custom Post Type)', 'custom-post-type-widgets' ), $widget_ops );
+		parent::__construct( 'custom-post-type-recent-posts', __( 'Sidekick Recent Posts', 'custom-post-type-widgets' ), $widget_ops );
 		$this->alt_option_name = 'widget_custom_post_type_recent_posts';
 	}
 

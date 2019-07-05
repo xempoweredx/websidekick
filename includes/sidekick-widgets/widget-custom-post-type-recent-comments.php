@@ -10,7 +10,7 @@ class WP_Custom_Post_Type_Widgets_Recent_Comments extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'widget_recent_comments', 'description' => __( 'Your site’s most recent comments.', 'custom-post-type-widgets' ) );
-		parent::__construct( 'custom-post-type-recent-comments', __( 'Recent Comments (Custom Post Type)', 'custom-post-type-widgets' ), $widget_ops );
+		parent::__construct( 'custom-post-type-recent-comments', __( 'Sidekick Recent Comments', 'custom-post-type-widgets' ), $widget_ops );
 		$this->alt_option_name = 'widget_custom_post_type_recent_comments';
 
 		if ( is_active_widget( false, false, $this->id_base ) ) {
