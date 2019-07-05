@@ -9,12 +9,6 @@
  * @author    CMB2 team
  * @license   GPL-2.0+
  * @link      https://cmb2.io
- *
- * @method string _id()
- * @method string _name()
- * @method string _desc()
- * @method string _text()
- * @method string concat_attrs()
  */
 class CMB2_Types {
 
@@ -142,6 +136,7 @@ class CMB2_Types {
 	 * @since  2.2.3
 	 *
 	 * @param string $method  Method attempting to be called on the CMB2_Type_Base object.
+	 * @return bool
 	 */
 	protected function guess_type_object( $method ) {
 		$fieldtype = $this->field->type();
@@ -184,7 +179,7 @@ class CMB2_Types {
 	 * @since  2.2.4
 	 * @param  string $method    The possible method to proxy.
 	 * @param  array  $arguments All arguments passed to the method.
-	 * @return bool|array       False if not proxied, else array with 'value' key being the return of the method.
+	 * @return bool|array        False if not proxied, else array with 'value' key being the return of the method.
 	 */
 	public function maybe_proxy_method( $method, $arguments ) {
 		$exists = false;
@@ -245,7 +240,7 @@ class CMB2_Types {
 	 * @param  string $render_class_name The default field type class to use. Defaults to null.
 	 * @param  array  $args              Optional arguments to pass to type class.
 	 * @param  mixed  $additional        Optional additional argument to pass to type class.
-	 * @return CMB2_Type_Base                    Type object.
+	 * @return CMB2_Type_Base            Type object.
 	 */
 	public function get_new_render_type( $fieldtype, $render_class_name = null, $args = array(), $additional = '' ) {
 		$render_class_name = $this->get_render_type_class( $fieldtype, $render_class_name );
@@ -286,10 +281,10 @@ class CMB2_Types {
 	/**
 	 * Retrieve text parameter from field's options array (if it has one), or use fallback text
 	 *
-	 * @since  2.0.0
-	 * @param  string $text_key Key in field's options array
-	 * @param  string $fallback Fallback text
-	 * @return string            Text
+	 * @since 2.0.0
+	 * @param  string $text_key Key in field's options array.
+	 * @param  string $fallback Fallback text.
+	 * @return string
 	 */
 	public function _text( $text_key, $fallback = '' ) {
 		return $this->field->get_string( $text_key, $fallback );
@@ -300,7 +295,7 @@ class CMB2_Types {
 	 *
 	 * @since  1.0.0
 	 * @param  string $file File url
-	 * @return string|false       File extension or false
+	 * @return string|false File extension or false
 	 */
 	public function get_file_ext( $file ) {
 		return CMB2_Utils::get_file_ext( $file );
@@ -374,7 +369,6 @@ class CMB2_Types {
 
 		// Loop value array and add a row
 		if ( ! empty( $meta_value ) ) {
-			$count = count( $meta_value );
 			foreach ( (array) $meta_value as $val ) {
 				$this->field->escaped_value = $val;
 				$this->repeat_row();
@@ -417,12 +411,13 @@ class CMB2_Types {
 	}
 
 	/**
-	 * Generates description markup
+	 * Generates description markup.
 	 *
-	 * @since  1.0.0
-	 * @param  boolean $paragraph Paragraph tag or span
-	 * @param  boolean $echo      Whether to echo description or only return it
-	 * @return string             Field's description markup
+	 * @since 1.0.0
+	 * @param bool $paragraph    Paragraph tag or span.
+	 * @param bool $echo         Whether to echo description or only return it.
+	 * @param bool $repeat_group Whether to repeat the group.
+	 * @return string Field's description markup.
 	 */
 	public function _desc( $paragraph = false, $echo = false, $repeat_group = false ) {
 		// Prevent description from printing multiple times for repeatable fields
@@ -432,12 +427,12 @@ class CMB2_Types {
 
 		$desc = $this->field->args( 'description' );
 
-		if ( ! $desc || $this->field->args( 'icon_block' )) {
+		if ( ! $desc ) {
 			return;
 		}
 
-		$tag = $paragraph ? 'p' : 'small';
-		$desc = sprintf( "\n" . '<%1$s class="form-text text-muted">%2$s</%1$s>' . "\n", $tag, $desc );
+		$tag = $paragraph ? 'p' : 'span';
+		$desc = sprintf( "\n" . '<%1$s class="cmb2-metabox-description">%2$s</%1$s>' . "\n", $tag, $desc );
 
 		if ( $echo ) {
 			echo $desc;
@@ -517,7 +512,7 @@ class CMB2_Types {
 		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
 			'class' => 'cmb2-text-small',
 			'desc'  => $this->_desc(),
-		), 	'input' )->render();
+		), 'input' )->render();
 	}
 
 	public function text_medium() {
@@ -662,149 +657,6 @@ class CMB2_Types {
 
 	public function file( $args = array() ) {
 		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_File', $args )->render();
-	}
-
-	/***************************************
-	* Begin Custom Field Types  @CG
-	***************************************/
-
-	public function sidekick_text() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'class' => 'form-control',
-		), 	'input' )->render();
-	}
-
-	public function sidekick_url() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'type'  => 'url',
-			'class' => 'form-control',
-			'value' => $this->field->escaped_value( 'esc_url' ),
-		),  'input' )->render();
-	}
-
-	public function sidekick_tel() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'type'  => 'tel',
-			'class' => 'form-control',
-			'desc'  => $this->_desc(),
-		),  'input' )->render();
-	}
-
-	public function sidekick_email() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'type'  => 'email',
-			'class' => 'form-control',
-			'desc'  => $this->_desc(),
-		), 	'input' )->render();
-	}
-
-	public function sidekick_password() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'type'  => 'password',
-			'class' => 'form-control',
-			'desc'  => $this->_desc(),
-		), 	'input' )->render();
-	}
-
-	public function sidekick_textarea( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Textarea', $args )->render();
-	}
-
-	public function sidekick_range() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Range', array(
-			'desc'  => $this->_desc(),
-		), 	'input' )->render();
-	}
-
-	public function sidekick_checkbox( $args = array(), $is_checked = null ) {
-		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
-		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
-		$this->type = new $render_class_name( $this, $args, $is_checked );
-		return $this->type->render();
-	}
-
-	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
-	public function sidekick_checkbox_icon( $args = array(), $is_checked = null ) {
-		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
-		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
-		$this->type = new $render_class_name( $this, $args, $is_checked );
-		return $this->type->render();
-	}
-
-	public function sidekick_multicheck( $type = 'checkbox' ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Multicheck', array(), $type )->render();
-	}
-
-	public function sidekick_radio( $args = array(), $type = __FUNCTION__ ) {
-		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio', $args, $type )->render();
-	}
-
-	// Added CMB2_Type_Sidekick_Radio_Buttons.php AND modified CMB2_Type_Multi_Base.php - 18-10-03 @CG
-	public function sidekick_radio_buttons( $args = array(), $type = __FUNCTION__ ) {
-		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio_Buttons', $args, $type )->render();
-	}
-
-	// Added CMB2_Type_Sidekick_Radio_Icons.php AND modified CMB2_Type_Multi_Base.php - 18-10-03 @CG
-	public function sidekick_radio_icons( $args = array(), $type = __FUNCTION__ ) {
-		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio_Icons', $args, $type )->render();
-	}
-
-	public function sidekick_select( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Select', $args )->render();
-	}
-
-	public function sidekick_taxonomy_select( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Taxonomy_Select', $args )->render();
-	}
-
-	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
-	public function sidekick_switch_toggle( $args = array(), $is_checked = null ) {
-		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
-		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
-		$this->type = new $render_class_name( $this, $args, $is_checked );
-		return $this->type->render();
-	}
-
-	// Modified "CMB2_Field.php" (function render_field_callback) AND (function label) AND "sidekick-admin-global.css" - 18-10-03 @CG
-	public function sidekick_switch_slide( $args = array(), $is_checked = null ) {
-		// Avoid get_new_render_type since we need a different default for the 3rd argument than ''.
-		$render_class_name = $this->get_render_type_class( __FUNCTION__, 'CMB2_Type_Sidekick_Checkbox' );
-		$this->type = new $render_class_name( $this, $args, $is_checked );
-		return $this->type->render();
-	}
-
-	// Using "sidekick_switch_buttons" as "type" adds specific css and js functions to the standard "radio_buttons" type. Limit "options" to 2! ONLY use BS4 markup "btn-outline-..." for "btn_color". Be sure to set "default" for one of the options. - 18-03-28 @CG
-	public function sidekick_switch_buttons( $args = array(), $type = __FUNCTION__ ) {
-		return $this->get_new_render_type( $type, 'CMB2_Type_Sidekick_Radio_Buttons', $args, $type )->render();
-	}
-
-	public function sidekick_file( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_File', $args )->render();
-	}
-
-	public function sidekick_text_date( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Date', $args )->render();
-	}
-
-	// Alias for text_date
-	public function sidekick_text_date_timestamp( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Date', $args )->render();
-	}
-
-	public function sidekick_text_time( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Time', $args )->render();
-	}
-
-	public function sidekick_text_datetime_timestamp( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Datetime_Timestamp', $args )->render();
-	}
-
-	public function sidekick_text_datetime_timestamp_timezone( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Text_Datetime_Timestamp_Timezone', $args )->render();
-	}
-
-	public function sidekick_select_timezone( $args = array() ) {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Sidekick_Select_Timezone', $args )->render();
 	}
 
 }
