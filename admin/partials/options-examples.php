@@ -9,7 +9,7 @@ $args = array(
 	'parent_slug'  => 'websidekick_main_options',
 	'tab_group'    => 'websidekick_options',
 	'tab_title'    => 'CMB2 Forms',
-	'cmb_styles' 	=> false, 
+	'cmb_styles' 	=> true, 
 );
 
 if ( version_compare( CMB2_VERSION, '2.4.0' ) ) {
@@ -92,6 +92,17 @@ $examples_options = new_cmb2_box( $args );
 				'type' => 'checkbox',
 				'classes' => array( 'col-12' ),
 			) );
+
+			$examples_options->add_field( array(
+				'name'       => 'TEST',
+				'id'   => 'checkbox_test',
+				'type'       => 'text_medium',
+				'attributes' => array(
+					'data-conditional-id' => 'checkbox',
+				),
+				'classes' => array( 'col-12' ),
+			) );
+
 			$examples_options->add_field( array(
 				'name' => 'multicheck',
 				'id'   => 'multicheck',

@@ -26,7 +26,7 @@ $sidekickforms_options = new_cmb2_box( $args );
 
 			$sidekickforms_options->add_field( array(
 				'name' => 'Sidekick Input Text Fields',
-				'id'   => 'title1',
+				'id'   => 'title_inputs',
 				'type' => 'title',
 				'classes' => array( 'col-12 mb-3' ),
 				'before_row' => '<div class="sidekickMetabox sidekickOptionsPage"><!-- Required for WP Gutenberg formatting -->
@@ -192,15 +192,15 @@ $sidekickforms_options = new_cmb2_box( $args );
 				'type' => 'sidekick_textarea',
 				//'textarea_rows' => '10',  // Optional. Controls starting height. Leave empty for default of 3 rows.
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
-				'after_row' => '</div><hr class="my-3"></hr>',
 			) );
 
 			$sidekickforms_options->add_field( array(
 				'name' => 'Radios, Checkboxes, & Select',
-				'id'   => 'title2',
+				'id'   => 'title_radios',
 				'type' => 'title',
 				'classes' => array( 'col-12 mb-3' ),
-				'before_row' => '<div class="row">',
+				'before_row' => '</div><hr class="my-3"></hr>',
+				'after_row' => '<div class="row">',
 			) );
 
 			$sidekickforms_options->add_field( array(
@@ -302,15 +302,15 @@ $sidekickforms_options = new_cmb2_box( $args );
 			    ),
 				'btn_color' 		=> 'btn-outline-info',  // Use BS4 btn-color markup
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
-				'after_row' => '</div><hr class="my-3"></hr>'
 			) );
 
 			$sidekickforms_options->add_field( array(
 				'name' => 'Switches & Ranges',
-				'id'   => 'title3',
+				'id'   => 'title_switches',
 				'type' => 'title',
 				'classes' => array( 'col-12 mb-3' ),
-				'before_row' => '<div class="row">',
+				'before_row' => '</div><hr class="my-3"></hr>',
+				'after_row' => '<div class="row">',
 			) );
 			
 			$sidekickforms_options->add_field( array(
@@ -436,7 +436,33 @@ $sidekickforms_options = new_cmb2_box( $args );
 			        'add_upload_file_text' => 'Upload' // Change upload button text. Default: "Add or Upload File"
 			    ),
 				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
-				'after_row' => '</div><!-- END .sidekickMetabox --></div><!-- END .row -->',
 			) );
 
+			$sidekickforms_options->add_field( array(
+				'name' => 'Conditional Examples',
+				'id'   => 'title_conditionals',
+				'type' => 'title',
+				'classes' => array( 'col-12 mb-3' ),
+				'before_row' => '</div><hr class="my-3"></hr>',
+				'after_row' => '<div class="row">',
+			) );
+
+			$sidekickforms_options->add_field( array(
+				'name' => 'Conditional Checkbox 1',
+				'id'   => 'sidekick_checkbox_cond1',
+				'type' => 'sidekick_checkbox',
+				//'desc' => 'test desc',
+				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
+			) );
+
+			$sidekickforms_options->add_field( array(
+				'name'       => 'Checkbox 1 Is Checked!',
+				'id'   => 'sidekick_checkbox_cond1_test',
+				'type'       => 'sidekick_text',
+				'attributes' => array(
+					'data-conditional-id' => 'sidekick_checkbox_cond1',
+				),
+				'classes' => array( 'col-12 col-sm-6 col-lg-4' ),
+				'after_row' => '</div><!-- END .sidekickMetabox --></div><!-- END .row -->',
+			) );
 			

@@ -1,31 +1,24 @@
 <?php
 /**
- * CMB2 Conditionals.
+ * CMB2 Conditionals Sidekick.
  *
  * @package     WordPress\Plugins\CMB2 Conditionals
- * @author      José Carlos Chávez <jcchavezs@gmail.com>
+ * @author      José Carlos Chávez <jcchavezs@gmail.com>, Chad Gray <chadgray.me>
  * @link        https://github.com/jcchavezs/cmb2-conditionals
- * @version     1.0.4
- *
- * @copyright   2015 José Carlos Chávez
- * @license     http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License, version 3 or higher
- *
+ * @version     1.0.5
+ * *
  * @wordpress-plugin
- * Plugin Name:       CMB2 Conditionals
- * Plugin URI:        https://github.com/jcchavezs/cmb2-conditionals
+ * Plugin Name:       CMB2 Conditionals Sidekick
+ * Plugin URI:        https://github.com/xempoweredx/websidekick/includes/cmb-conditionals/
  * Description:       Plugin to establish conditional relationships between fields in a CMB2 metabox.
- * Author:            José Carlos Chávez <jcchavezs@gmail.com>
- * Author URI:        http://github.com/jcchavezs
- * Github Plugin URI: https://github.com/jcchavezs/cmb2-conditionals
+ * Author:            José Carlos Chávez <jcchavezs@gmail.com>, Chad Gray <chadgray.me>
+ * Author URI:        http://github.com/xempoweredx
+ * Github Plugin URI: https://github.com/xempoweredx/websidekick/includes/cmb-conditionals/
  * Github Branch:     master
- * Version:           1.0.4
+ * Version:           1.0.5
  * License:           GPL v3
  *
- * Copyright (C) 2015, José Carlos Chávez - jcchavezs@gmail.com
- *
- * GNU General Public License, Free Software Foundation <http://creativecommons.org/licenses/GPL/3.0/>
- *
- *** BEFORE UPDATING *** BE SURE TO MAKE A BACKUP OF THIS PLUGIN! MUST CHANGE ALL REFERENCES FOR .cmb-row to .form-group IN PLUGIN JS FILE to establish conditional relationships between fields in a CMB2 metabox.
+ *** BEFORE UPDATING *** BE SURE TO MAKE A BACKUP OF THIS FILE & .js FILE!!! MUST CHANGE ALL REFERENCES FOR .cmb-row to .form-group IN PLUGIN JS FILE to establish conditional relationships between fields in a CMB2 metabox.
  */
 
 if ( ! class_exists( 'CMB2_Conditionals', false ) ) {
@@ -47,7 +40,7 @@ if ( ! class_exists( 'CMB2_Conditionals', false ) ) {
 		 *
 		 * @const string
 		 */
-		const VERSION = '1.0.4';
+		const VERSION = '1.0.5';
 
 		/**
 		 * CMB2 Form elements which can be set to "required".
@@ -93,47 +86,17 @@ if ( ! class_exists( 'CMB2_Conditionals', false ) ) {
 			}
 		}
 
-		/**
+		/** MOST CUSTOM SIDEKICK CHANGES MADE HERE & IN .js FILE **
 		 * Decide whether to include the js-script or not.
 		 */
 		public function admin_footer() {
 
-			/* TESTED **
-			$enqueue_script = apply_filters( 'cmb2_conditionals_enqueue_script', $enqueue_script );
-
-			$script_src = apply_filters( 'cmb2_conditionals_enqueue_script_src', plugins_url( '/cmb2-conditionals.js', __FILE__ ) );
-
-			wp_enqueue_script(
-				'cmb2-conditionals',
-				$script_src,
-				array( 'jquery', 'cmb2-scripts' ),
-				self::VERSION,
-				true
-			);
-			**/
-
-			
 			// enqueue on editor & sidekick_options pages.
 			$screen = get_current_screen();
 
 			$sidekick_admin = $screen->id = 'websidekick_main_options';
 
 			$enqueue_script = in_array( $GLOBALS['pagenow'], array( 'post-new.php', 'post.php' ), true );
-
-			// if not editor, check if current screen contains cmb2 option page
-			/*if ( is_admin() && ! $enqueue_script ) {
-				// get current screen object
-				$screen = get_current_screen();
-				// get all option page metaboxes
-				$option_page_boxes = CMB2_Boxes::get_by( 'object_types', array('options-page') );
-				// loop option page metaboxes and check if existing on curent screen
-				foreach( $option_page_boxes as $option_box_id => $option_box ) {
-					if ( $enqueue_script === true )
-						break;
-					if ( str_replace( '.php', '', $option_box->meta_box['parent_slug'] ) === $screen->parent_base && strpos( $screen->base, $option_box_id ) !== false )
-						$enqueue_script = true;
-				}
-			}*/
 
 			// last chance to skip or force enqueue
 			$enqueue_script = apply_filters( 'cmb2_conditionals_enqueue_script', $enqueue_script );
@@ -142,16 +105,6 @@ if ( ! class_exists( 'CMB2_Conditionals', false ) ) {
 			$script_src = apply_filters( 'cmb2_conditionals_enqueue_script_src', plugins_url( '/cmb2-conditionals.js', __FILE__ ) );
 
 			$script_src_sidekick = apply_filters( 'cmb2_conditionals_enqueue_script_src', plugins_url( '/cmb2-conditionals-sidekick.js', __FILE__ ) );
-
-			/*if ( $enqueue_script ) {
-				wp_enqueue_script(
-					'cmb2-conditionals',
-					$script_src,
-					array( 'jquery', 'cmb2-scripts' ),
-					self::VERSION,
-					true
-				);
-			}*/
 
 			if (( $sidekick_admin ) || ($enqueue_script)) {
 				wp_enqueue_script(
@@ -170,7 +123,6 @@ if ( ! class_exists( 'CMB2_Conditionals', false ) ) {
 				);
 			}
 			
-
 		}
 
 

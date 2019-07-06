@@ -1,6 +1,8 @@
 jQuery( document ).ready( function( $ ) {
 	'use strict';
 
+if ( $( '.sidekickMetabox' ).length ) {
+
 	/**
 	 * Add 'show' and 'hide' event to JQuery event detection.
 	 * @see http://viralpatel.net/blogs/jquery-trigger-custom-event-show-hide-element/
@@ -64,7 +66,7 @@ jQuery( document ).ready( function( $ ) {
 						current          = $( e ),
 						currentFieldName = current.attr( 'name' ),
 						requiredValue    = current.data( 'conditional-value' ),
-						currentParent    = current.parents( '.cmb-row:first' ),
+						currentParent    = current.parents( '.form-group:first' ),
 						shouldShow       = false;
 
 					// Only check this dependant if we haven't done so before for this parent.
@@ -142,14 +144,14 @@ jQuery( document ).ready( function( $ ) {
 		 */
 
 		// Remove the required property from form elements within rows being hidden.
-		conditionContext.on( 'CMB2hide', '.cmb-row', function() {
+		conditionContext.on( 'CMB2hide', '.form-group', function() {
 			$( this ).children( '[data-conditional-required="required"]' ).each( function( i, e ) {
 				$( e ).prop( 'required', false );
 			});
 		});
 
 		// Add the required property to form elements within rows being unhidden.
-		conditionContext.on( 'CMB2show', '.cmb-row', function() {
+		conditionContext.on( 'CMB2show', '.form-group', function() {
 			$( this ).children( '[data-conditional-required="required"]' ).each( function( i, e ) {
 				$( e ).prop( 'required', true );
 			});
@@ -165,7 +167,7 @@ jQuery( document ).ready( function( $ ) {
 		requiredElms.data( 'conditional-required', requiredElms.prop( 'required' ) ).prop( 'required', false );
 
 		// Hide all conditional elements
-		$( '[data-conditional-id]', conditionContext ).parents( '.cmb-row:first' ).hide();
+		$( '[data-conditional-id]', conditionContext ).parents( '.form-group:first' ).hide();
 
 		// Selectively trigger the change event.
 		uniqueFormElms = [];
@@ -195,7 +197,7 @@ jQuery( document ).ready( function( $ ) {
 			rowRequiredElms.data( 'conditional-required', rowRequiredElms.prop( 'required' ) ).prop( 'required', false );
 
 			// Hide all conditional elements
-			$( '[data-conditional-id]', row ).parents( '.cmb-row:first' ).hide();
+			$( '[data-conditional-id]', row ).parents( '.form-group:first' ).hide();
 
 			rowFormElms = $( ':input', row );
 			if ( 1 === rowFormElms.length || ! rowFormElms.is( ':checked' ) ) {
@@ -252,7 +254,7 @@ jQuery( document ).ready( function( $ ) {
 					dependantName = dependant.attr( 'name' );
 
 				// Hide it.
-				dependant.parents( '.cmb-row:first' ).hide();
+				dependant.parents( '.form-group:first' ).hide();
 				if ( dependant.data( 'conditional-required' ) ) {
 					dependant.prop( 'required', false );
 				}
@@ -291,4 +293,7 @@ jQuery( document ).ready( function( $ ) {
 			break;
 
 	}
+
+} /* endif .sidekickMetabox */
+
 });
