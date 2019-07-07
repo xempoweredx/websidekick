@@ -5,11 +5,11 @@
 **Tags**: admin<br/>
 **Requires at least**: 3.0.1<br/>
 **Tested up to**: 5.2.2<br/>
-**Stable tag**: 1.1.6 BETA<br/>
+**Stable tag**: 1.1.6<br/>
 **License**: GPLv2 or later<br/>
 **License** URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wordpress Admin panel adding Bootstrap 4, CMB2, Fontawesome 5, and more for extra functionality and flexability.
+Wordpress Admin plugin adding Bootstrap 4, CMB2, Fontawesome 5, and more for extra functionality and flexability.
 
 ## Heads Up
 
@@ -97,6 +97,25 @@ If this plugin is used in conjunction with the "websidekick-starter-theme" (http
 4. Navigate to Sidekick Options > Sidekick Options. Default values should be in the inputs. Scroll to the bottom and click "Save". That enqueues all necessary files.
 
 ## Changelog
+
+= 1.1.6 =
+* Update to CMB 2.6.0
+* Update CPT_TEMPLATE.php
+* Update Tax_CPT_Template.php
+* Move menu options to separate tab in settings
+* Update options-main.php
+* Update options-menu.php
+* Condense WS Types plugin into one main plugin for easier maintenance
+* Add CPT widgets to plugin core
+* Fix WP Notice: options not indexed
+* Convert BLB Search into widget
+* Fix CMB2_Type_Sidekick_Text_Datetime_Timestamp.php
+* Update to Add-to-Any 1.7.36
+* Update CMB2 Conditionals files
+* Update to Wp Maintenance Mode v2.2.4
+* Update to Widget Shortcode 0.3.4
+* Update to list-custom-taxonomy-widget 4.1
+* Update CMB2 Taxonomy
 
 = 1.1.5 =
 * Added Bootstrap 4.3.1 "Sidekick version" which contains all standard BS4 styles with a few added text and color classes for more functionality.
