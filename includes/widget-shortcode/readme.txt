@@ -3,8 +3,8 @@ Contributors: shazdeh
 Plugin Name: Widget Shortcode
 Tags: widget, shortcode, theme, admin
 Requires at least: 3.0
-Tested up to: 4.9.6
-Stable tag: 0.3.3
+Tested up to: 5.0.3
+Stable tag: 0.3.4
 
 Adds [widget] shortcode which enables you to output widgets anywhere you like.
 
@@ -34,8 +34,12 @@ Additional Parameters:
 
 1. The plugin generates the shortcode for you
 2. The shortcode generator in TinyMCE editor
+3. The new Widget Shortcode block in Gutenberg
 
 == Changelog ==
+
+= 0.3.4 =
+* New Gutenberg block
 
 = 0.3.3 =
 * Additional CSS classes to the widget wrapper

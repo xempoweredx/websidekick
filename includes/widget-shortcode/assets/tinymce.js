@@ -1,29 +1,29 @@
 (function($) {
-	if( typeof widgetShortcode === 'undefined' )
+	if ( typeof widgetShortcodeTinyMCE === 'undefined' )
 		return;
 
-	if( widgetShortcode.widgets.length < 1 )
+	if ( widgetShortcodeTinyMCE.widgets.length < 1 )
 		return;
 
 	tinymce.PluginManager.add( 'widgetShortcode', function( editor, url ) {
 		var items = [];
-		$.each( widgetShortcode.widgets, function( i, v ){
+		$.each( widgetShortcodeTinyMCE.widgets, function( i, v ) {
 			var item = {
-				'text' : v.title,
+				'text' : v.label,
 				'body': {
-					'type': v.title
+					'type': v.label
 				},
 				'onclick' : function(){
-					editor.insertContent( '[widget id="' + v.id + '"]' );
+					editor.insertContent( '[widget id="' + v.value + '"]' );
 				}
 			};
 			items.push( item );
 		} );
 
 		editor.addButton( 'widgetShortcode', {
-			title: widgetShortcode.title,
+			title: widgetShortcodeTinyMCE.title,
 			type : 'menubutton',
-			image : widgetShortcode.image,
+			image : widgetShortcodeTinyMCE.image,
 			menu : items
 		});
 	});
