@@ -74,6 +74,11 @@ else { $options = get_option('websidekick_main_options'); }
 		require_once plugin_dir_path( __FILE__ ) . 'includes/wps-hide-login/wps-hide-login.php';
 	}
 
+	/* Get the WPS Hide Login init file if enabled in Main Settings tab! */
+	if( isset($options['wps_limit_login'])){
+		require_once plugin_dir_path( __FILE__ ) . 'includes/wps-limit-login/wps-limit-login.php';
+	}
+
 	/* Get the Maintenance Mode init file if enabled in Main Settings tab! */
 	if( isset($options['blb_tagger'])){
 		require_once plugin_dir_path( __FILE__ ) . 'includes/BLB_ScriptTagger/BLB_ScriptTagger.php';
