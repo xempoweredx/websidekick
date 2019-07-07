@@ -51,7 +51,7 @@ else { $options = get_option('websidekick_main_options'); }
 	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-term-select/cmb2-term-select.php';
 
 	/* Get the List Taxonomy Widget file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/list-taxonomy-widget/list-taxonomy-widget.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/list-custom-taxonomy-widget/list-custom-taxonomy-widget.php';
 
 	/* Get the Sidekick Widgets file! */
 	require_once plugin_dir_path( __FILE__ ) . 'includes/sidekick-widgets/class-custom-post-type-widgets.php';
