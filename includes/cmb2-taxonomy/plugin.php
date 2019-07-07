@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Plugin Name:  CMB2 Taxonomy
+ * Plugin URI:   https://github.com/jcchavezs/cmb2-taxonomy
+ * Description:  CMB2 Taxonomy will create metaboxes and forms with custom fields for your taxonomies using the CMB2 API.
+ * Author:       José Carlos Chávez <jcchavezs@gmail.com>
+ * Author URI:   http://github.com/jcchavezs
+ * Github Plugin URI: https://github.com/jcchavezs/cmb2-taxonomy
+ * Github Branch: master
+ * Version:      1.0.2
+ */
+
+/**
  * Create the tables for the taxonomies metadata when activating the plugin.
  */
 function cmb2_taxonomy_register_activation_hook() {
