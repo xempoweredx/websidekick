@@ -61,27 +61,27 @@ else { $options = get_option('websidekick_main_options'); }
 
 	/* Get the AddToAny file if enabled in Main Settings tab! */
 	if( isset($options['a2a'])){
-	   require_once plugin_dir_path( __FILE__ ) . 'includes/add-to-any/add-to-any.php';
+	   require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/add-to-any/add-to-any.php';
 	}
 
 	/* Get the Maintenance Mode init file if enabled in Main Settings tab! */
 	if( isset($options['maintenance'])){
-		require_once plugin_dir_path( __FILE__ ) . 'includes/wp-maintenance-mode/wp-maintenance-mode.php';
+		require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/wp-maintenance-mode/wp-maintenance-mode.php';
 	}
 
 	/* Get the WPS Hide Login init file if enabled in Main Settings tab! */
 	if( isset($options['wps_hide_login'])){
-		require_once plugin_dir_path( __FILE__ ) . 'includes/wps-hide-login/wps-hide-login.php';
+		require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/wps-hide-login/wps-hide-login.php';
 	}
 
 	/* Get the WPS Hide Login init file if enabled in Main Settings tab! */
 	if( isset($options['wps_limit_login'])){
-		require_once plugin_dir_path( __FILE__ ) . 'includes/wps-limit-login/wps-limit-login.php';
+		require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/wps-limit-login/wps-limit-login.php';
 	}
 
 	/* Get the Maintenance Mode init file if enabled in Main Settings tab! */
 	if( isset($options['blb_tagger'])){
-		require_once plugin_dir_path( __FILE__ ) . 'includes/BLB_ScriptTagger/BLB_ScriptTagger.php';
+		require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/BLB_ScriptTagger/BLB_ScriptTagger.php';
 	}
 
 /* END THIRD PARTY & CUSTOM PLUGINS */
