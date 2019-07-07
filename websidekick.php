@@ -51,13 +51,13 @@ else { $options = get_option('websidekick_main_options'); }
 	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-term-select/cmb2-term-select.php';
 
 	/* Get the List Taxonomy Widget file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/list-custom-taxonomy-widget/list-custom-taxonomy-widget.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/list-custom-taxonomy-widget/list-custom-taxonomy-widget.php';
 
 	/* Get the Sidekick Widgets file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/sidekick-widgets/class-custom-post-type-widgets.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/sidekick-widgets/class-custom-post-type-widgets.php';
 
 	/* Get the Widget Shortcode Generator file! // https://wordpress.org/plugins/widget-shortcode/ */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/widget-shortcode/init.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/widget-shortcode/init.php';
 
 	/* Get the AddToAny file if enabled in Main Settings tab! */
 	if( isset($options['a2a'])){
