@@ -39,16 +39,16 @@ else { $options = get_option('websidekick_main_options'); }
 /* INITIATE THIRD PARTY & CUSTOM PLUGINS */
 
 	/* Get the CMB2 bootstrap file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2/init.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/assets-core/cmb2/init.php';
 
 	/* Get the CMB2 Conditionals file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-conditionals/cmb2-conditionals-sidekick.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/assets-core/cmb2-conditionals/cmb2-conditionals-sidekick.php';
 
 	/* Get the CMB2 Taxonomy file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-taxonomy/plugin.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/assets-core/cmb2-taxonomy/plugin.php';
 
 	/* Get the CMB2 Term Select file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/cmb2-term-select/cmb2-term-select.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/assets-core/cmb2-term-select/cmb2-term-select.php';
 
 	/* Get the List Taxonomy Widget file! */
 	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/list-custom-taxonomy-widget/list-custom-taxonomy-widget.php';
