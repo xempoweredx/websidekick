@@ -50,11 +50,14 @@ else { $options = get_option('websidekick_main_options'); }
 	/* Get the CMB2 Term Select file! */
 	require_once plugin_dir_path( __FILE__ ) . 'includes/assets-core/cmb2-term-select/cmb2-term-select.php';
 
+	/* Get the CMB2 Term Select file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/assets-core/cmb2-term-select/cmb2-term-select.php';
+
+	/* Get the cmb2-field-ajax-search file! */
+	require_once plugin_dir_path( __FILE__ ) . 'includes//assets-core/cmb2-field-ajax-search/cmb2-field-ajax-search.php';
+
 	/* Get the List Taxonomy Widget file! */
 	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/list-custom-taxonomy-widget/list-custom-taxonomy-widget.php';
-
-	/* Get the Sidekick Widgets file! */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/sidekick-widgets/class-custom-post-type-widgets.php';
 
 	/* Get the Widget Shortcode Generator file! // https://wordpress.org/plugins/widget-shortcode/ */
 	require_once plugin_dir_path( __FILE__ ) . 'includes/widgets/widget-shortcode/init.php';
