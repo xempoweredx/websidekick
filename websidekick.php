@@ -84,6 +84,11 @@ else { $options = get_option('websidekick_main_options'); }
 		require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/BLB_ScriptTagger/BLB_ScriptTagger.php';
 	}
 
+	/* Get the Shadow Taxonomy init file if enabled in Main Settings tab! */
+	if( isset($options['shadow_tax'])){
+		require_once plugin_dir_path( __FILE__ ) . 'includes/assets-optional/shadow-taxonomy/index.php';
+	}
+
 /* END THIRD PARTY & CUSTOM PLUGINS */
 
 /**
