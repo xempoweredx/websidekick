@@ -1,11 +1,11 @@
 <?php
 
-$slug = 'tax-slug';
-$singular = 'Taxonomy';
-$plural = 'Taxonomies';
-$singular_lower = 'taxonomy';
-$plural_lower = 'taxonomies';
-$cpts = array( 'cpt1', 'cpt2' );
+$slug = 'book-titles';
+$singular = 'Title';
+$plural = 'Titles';
+$singular_lower = 'title';
+$plural_lower = 'titles';
+$cpts = array( 'books' );
 
 $labels = array(
 	'name'                       => _x( $plural, 'Taxonomy General Name', 'websidekick' ),

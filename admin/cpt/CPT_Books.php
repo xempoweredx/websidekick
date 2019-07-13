@@ -1,12 +1,12 @@
 <?php
 
-$slug = 'cpt-slug'; // Main cpt slug
-$singular = 'Type';
-$plural = 'Types';
-$singular_lower = 'type';
-$plural_lower = 'types'; 
-$menu_icon = 'dashicons-shield'; // https://developer.wordpress.org/resource/dashicons/#dashboard
-$tax = array( 'type-tax1', 'type-tax2', 'type-tax3' );
+$slug = 'books'; // Main cpt slug
+$singular = 'Book';
+$plural = 'Books';
+$singular_lower = 'book';
+$plural_lower = 'books'; 
+$menu_icon = 'dashicons-book'; // https://developer.wordpress.org/resource/dashicons/#dashboard
+$tax = array( 'book-titles', 'book-authors', 'book-narrators', 'book-series', 'book-formats' );
 $cap_type = 'post'; // Capability type
 $supports = array(
 	'title',

@@ -1,5 +1,6 @@
 <?php
 
+$slug = 'sermons'; // Main cpt slug
 $singular = 'Sermon';
 $plural = 'Sermons';
 $singular_lower = 'sermon';
@@ -21,7 +22,7 @@ $supports = array(
 	//'post-formats', 
 );
 $rewrite = array (
-	'slug'					=> __( $plural_lower, 'websidekick' ),  // Customize the permastruct slug. Defaults to $post_type key.
+	'slug'					=> __( $slug, 'websidekick' ),  // Customize the permastruct slug. Defaults to $post_type key.
 	'with_front'			=> true,  // Default true
 	'feeds'					=> true,  // Default true
 	'pages'					=> true,  // Default true
@@ -83,12 +84,12 @@ $args = array(
     'can_export'            => true,
     'has_archive'           => true, 
     'rewrite'				=> $rewrite,   
-    'query_var'				=> $plural_lower,  // Defaults to $post_type key.
+    'query_var'				=> $slug,  // Defaults to $post_type key.
     'delete_with_user'		=> null,  // Default null.
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => $cap_type,
     'show_in_rest'          => true,
-    'rest_base'             => $plural_lower,
+    'rest_base'             => $slug,
 );
-register_post_type( $plural_lower, $args );
+register_post_type( $slug, $args );
