@@ -88,6 +88,9 @@ class CMB2_Field_Display {
 			case 'taxonomy_multicheck':
 			case 'taxonomy_multicheck_inline':
 			case 'taxonomy_multicheck_hierarchical':
+			case 'sidekick_taxonomy_multicheck':
+			case 'sidekick_taxonomy_multicheck_inline':
+			case 'sidekick_taxonomy_multicheck_hierarchical':
 				$type = new CMB2_Display_Taxonomy_Multicheck( $field );
 				break;
 			case 'file':
