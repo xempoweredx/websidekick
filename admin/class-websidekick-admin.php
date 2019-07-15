@@ -214,12 +214,14 @@ class Websidekick_Admin {
 	 */
 	public function register_tax() {
 
-		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Titles.php' );
+		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Titles.php' );
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Authors.php' );
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Narrators.php' );
 		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Series.php' );
-		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Formats.php' );
-
+		//require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Formats.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Genres.php' );
+		require_once( plugin_dir_path(__FILE__) . 'tax/Tax_Book_Publishers.php' );
+		
 	}
 
 	/**
@@ -230,6 +232,20 @@ class Websidekick_Admin {
 	public function register_cpt_metaboxes() {
 
 		require_once( plugin_dir_path(__FILE__) . 'meta/Meta_CPT_Books.php' );
+
+	}
+
+	
+	/**
+	 * Register TAX metaboxes.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_tax_metaboxes( array $meta_boxes ) {
+
+		require_once( plugin_dir_path(__FILE__) . 'meta/Meta_TAX_Books_ALL.php' );
+
+		return $meta_boxes;
 
 	}
 
