@@ -105,17 +105,20 @@ If this plugin is used in conjunction with the "websidekick-starter-theme" (http
 * Move menu options to separate tab in settings
 * Update options-main.php
 * Update options-menu.php
-* Condense WS Types plugin into one main plugin for easier maintenance
+* Combine WebSidekick-Types plugin with this one main plugin for easier maintenance
 * Add CPT widgets to plugin core
 * Fix WP Notice: options not indexed
 * Convert BLB Search into widget
 * Fix CMB2_Type_Sidekick_Text_Datetime_Timestamp.php
-* Update to Add-to-Any 1.7.36
+* Update to latest Add-to-Any
 * Update CMB2 Conditionals files
-* Update to Wp Maintenance Mode v2.2.4
-* Update to Widget Shortcode 0.3.4
-* Update to list-custom-taxonomy-widget 4.1
-* Update CMB2 Taxonomy
+* Update to latest Wp Maintenance Mode v2.2.4
+* Update to latest Widget Shortcode v0.3.4
+* Update to latest list-custom-taxonomy-widget v4.1
+* Update to latest CMB2 Taxonomy
+* Add cmb2-field-ajax-search to plugin core
+* Added Books CPT for more examples and better testing
+* Added Custom Taxonomy template/boilerplate
 
 = 1.1.5 =
 * Added Bootstrap 4.3.1 "Sidekick version" which contains all standard BS4 styles with a few added text and color classes for more functionality.
