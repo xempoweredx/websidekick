@@ -652,6 +652,9 @@ class CMB2_Field extends CMB2_Base {
 			'sidekick_file'					   => 1,
 			'sidekick_radio'				   => 1,
 			'sidekick_checkbox'                => 1,
+			'sidekick_taxonomy_multicheck'              => 1,
+			'sidekick_taxonomy_multicheck_inline'       => 1,
+			'sidekick_taxonomy_multicheck_hierarchical' => 1,
 
 		);
 
@@ -1636,7 +1639,7 @@ class CMB2_Field extends CMB2_Base {
 		$args['show_option_none'] = true === $args['show_option_none'] ? esc_html__( 'None', 'cmb2' ) : $args['show_option_none'];
 
 		if ( null === $args['show_option_none'] ) {
-			$off_by_default = in_array( $args['type'], array( 'select', 'radio', 'radio_inline' ), true );
+			$off_by_default = in_array( $args['type'], array( 'select', 'radio', 'radio_inline', 'sidekick_radio' ), true );
 			$args['show_option_none'] = $off_by_default ? false : esc_html__( 'None', 'cmb2' );
 		}
 
