@@ -159,13 +159,16 @@ class Websidekick {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		//$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_network_options_metabox' );
-		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_main_options_metabox' );
+
+
+		$this->loader->add_filter( 'cmb2_admin_init', $plugin_admin, 'register_main_options_metabox' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_cpts' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_tax' );
 		$this->loader->add_action( 'cmb2_init', $plugin_admin, 'register_cpt_metaboxes' );
+		$this->loader->add_filter( 'cmb2-taxonomy_meta_boxes', $plugin_admin, 'register_tax_metaboxes' );
 		$this->loader->add_filter( 'admin_body_class', $plugin_admin, 'user_role_body_class' );
 		$this->loader->add_action( 'admin_footer', $plugin_admin, 'bottom_scripts', 99 );
-		
+	
 	}
 
 	/**
