@@ -6,7 +6,8 @@ $plural = 'Books';
 $singular_lower = 'book';
 $plural_lower = 'books'; 
 $menu_icon = 'dashicons-book'; // https://developer.wordpress.org/resource/dashicons/#dashboard
-$tax = array( 'book-titles', 'book-authors', 'book-narrators', 'book-series', 'book-formats' );
+//$tax = array( 'book-titles', 'book-authors', 'book-narrators', 'book-series', 'book-formats', 'book-genres', 'book-publishers' );
+$tax = array( 'book-authors', 'book-narrators', 'book-series', 'book-genres', 'book-publishers' );
 $cap_type = 'post'; // Capability type
 $supports = array(
 	'title',
@@ -18,7 +19,7 @@ $supports = array(
 	//'custom-fields', //(see Custom_Fields, aka meta-data)
 	//'comments' //(also will see comment count balloon on edit screen)
 	//'revisions', //(will store revisions)
-	//'page-attributes', //(template and menu order) (hierarchical must be true)
+	'page-attributes', //(template and menu order) (hierarchical must be true)
 	//'post-formats', 
 );
 $rewrite = array (
@@ -73,7 +74,7 @@ $args = array(
     'labels'                => $labels,
     'supports'              => $supports,
     'taxonomies'            => $tax,
-    'hierarchical'          => false,
+    'hierarchical'          => true,
     'public'                => true,
     'show_ui'               => true,
     'show_in_menu'          => true,
